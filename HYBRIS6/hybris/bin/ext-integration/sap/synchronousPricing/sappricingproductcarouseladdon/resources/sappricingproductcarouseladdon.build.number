@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 15 12:17:04 UTC 2017
+builddate=20171115 1217
+description=sappricingproductcarouseladdon
+group.id=de.hybris.platform
+module.name=platform-module
+name=sappricingproductcarouseladdon
+releasedate=20171109 1910
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

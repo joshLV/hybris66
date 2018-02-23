@@ -1,0 +1,2 @@
+INSERT_UPDATE CatalogVersionToRuleEngineContextMapping;context(name)[unique=true];catalogVersion(catalog(id),version)[unique=true]
+;promotions-junit-context;hwcatalog:Online

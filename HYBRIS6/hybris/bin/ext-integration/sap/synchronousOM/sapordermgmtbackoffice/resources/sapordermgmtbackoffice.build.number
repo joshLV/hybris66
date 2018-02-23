@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 06:48:09 UTC 2017
+builddate=20171120 0648
+description=sapordermgmtbackoffice
+group.id=de.hybris.platform
+module.name=platform-module
+name=sapordermgmtbackoffice
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

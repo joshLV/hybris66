@@ -1,0 +1,2 @@
+INSERT_UPDATE Customer ; uid[unique=true]                         ; name[default=testName]              
+                       ; na\r01_00_060_shop_[$shop]  

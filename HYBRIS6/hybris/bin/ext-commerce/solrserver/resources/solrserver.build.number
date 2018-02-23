@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Nov 16 20:54:29 UTC 2017
+builddate=20171116 2054
+description=solrserver
+group.id=de.hybris.platform
+module.name=platform-module
+name=solrserver
+releasedate=20171116 1450
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

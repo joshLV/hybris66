@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<!--&lt;!&ndash; SapCpiOrder &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrder">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiOrder")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="receiverName" type="String"/>-->
+		<!--<property name="creationDate" type="String"/>-->
+		<!--<property name="currencyIsoCode" type="String"/>-->
+		<!--<property name="paymentMode" type="String"/>-->
+		<!--<property name="deliveryMode" type="String"/>-->
+		<!--<property name="purchaseOrderNumber" type="String"/>-->
+		<!--<property name="baseStoreUid" type="String"/>-->
+		<!--<property name="channel" type="String"/>-->
+		<!--<property name="salesOrganization" type="String"/>-->
+		<!--<property name="distributionChannel" type="String"/>-->
+		<!--<property name="division" type="String"/>-->
+
+		<!--<property name="sapCpiCreditCardPayments" type="java.util.List&lt;de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiCreditCardPayment>">-->
+			<!--<annotations scope="getter" >@XmlElement(name="SapCpiCreditCardPayments")</annotations>-->
+		<!--</property>-->
+
+		<!--<property name="sapCpiOrderItems" type="java.util.List&lt;de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderItem>">-->
+			<!--<annotations scope="getter" >@XmlElement(name="SapCpiOrderItems")</annotations>-->
+		<!--</property>-->
+
+		<!--<property name="sapCpiPartnerRoles" type="java.util.List&lt;de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiPartnerRole>">-->
+			<!--<annotations scope="getter" >@XmlElement(name="SapCpiPartnerRoles")</annotations>-->
+		<!--</property>-->
+
+		<!--<property name="sapCpiOrderAddresses" type="java.util.List&lt;de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderAddress>">-->
+			<!--<annotations scope="getter" >@XmlElement(name="SapCpiOrderAddresses")</annotations>-->
+		<!--</property>-->
+
+		<!--<property name="sapCpiOrderPriceComponents" type="java.util.List&lt;de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderPriceComponent>">-->
+			<!--<annotations scope="getter" >@XmlElement(name="SapCpiOrderPriceComponents")</annotations>-->
+		<!--</property>-->
+
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; SapCpiOrderAddress &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderAddress">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiOrderAddress")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="documentAddressId" type="String"/>-->
+		<!--<property name="firstName" type="String"/>-->
+		<!--<property name="lastName" type="String"/>-->
+		<!--<property name="middleName" type="String"/>-->
+		<!--<property name="middleName2" type="String"/>-->
+		<!--<property name="street" type="String"/>-->
+		<!--<property name="city" type="String"/>-->
+		<!--<property name="district" type="String"/>-->
+		<!--<property name="building" type="String"/>-->
+		<!--<property name="appartment" type="String"/>-->
+		<!--<property name="pobox" type="String"/>-->
+		<!--<property name="faxNumber" type="String"/>-->
+		<!--<property name="titleCode" type="String"/>-->
+		<!--<property name="telNumber" type="String"/>-->
+		<!--<property name="houseNumber" type="String"/>-->
+		<!--<property name="postalCode" type="String"/>-->
+		<!--<property name="regionIsoCode" type="String"/>-->
+		<!--<property name="countryIsoCode" type="String"/>-->
+		<!--<property name="email" type="String"/>-->
+		<!--<property name="languageIsoCode" type="String"/>-->
+
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; SapCpiCreditCardPayment &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiCreditCardPayment">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiCreditCardPayment")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="requestId" type="String"/>-->
+		<!--<property name="ccOwner" type="String"/>-->
+		<!--<property name="validToMonth" type="String"/>-->
+		<!--<property name="validToYear" type="String"/>-->
+		<!--<property name="subscriptionId" type="String"/>-->
+		<!--<property name="paymentProvider" type="String"/>-->
+
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; SapCpiOrderPriceComponent &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderPriceComponent">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiOrderPriceComponent")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="entryNumber" type="String"/>-->
+		<!--<property name="value" type="String"/>-->
+		<!--<property name="unit" type="String"/>-->
+		<!--<property name="absolute" type="String"/>-->
+		<!--<property name="conditionCode" type="String"/>-->
+		<!--<property name="conditionCounter" type="String"/>-->
+		<!--<property name="currencyIsoCode" type="String"/>-->
+		<!--<property name="priceQuantity" type="String"/>-->
+
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; SapCpiPartnerRole &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiPartnerRole">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiPartnerRole")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="partnerRoleCode" type="String"/>-->
+		<!--<property name="partnerId" type="String"/>-->
+		<!--<property name="documentAddressId" type="String"/>-->
+		<!--<property name="entryNumber" type="String"/>-->
+
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; SapCpiOrderItem &ndash;&gt;-->
+	<!--<bean class="de.hybris.platform.sap.sapcpiorderexchange.data.SapCpiOrderItem">-->
+
+		<!--<import type="javax.xml.bind.annotation.XmlRootElement"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElements"/>-->
+		<!--<import type="javax.xml.bind.annotation.XmlElement"/>-->
+
+		<!--<annotations>@XmlRootElement(name="SapCpiOrderItem")</annotations>-->
+
+		<!--<property name="orderId" type="String"/>-->
+		<!--<property name="entryNumber" type="String"/>-->
+		<!--<property name="quantity" type="String"/>-->
+		<!--<property name="currencyIsoCode" type="String"/>-->
+		<!--<property name="unit" type="String"/>-->
+		<!--<property name="productCode" type="String"/>-->
+		<!--<property name="productName" type="String"/>-->
+		<!--<property name="plant" type="String"/>-->
+		<!--<property name="namedDeliveryDate" type="String"/>-->
+		<!--<property name="itemCategory" type="String"/>-->
+
+	<!--</bean>-->
+
+
+</beans>

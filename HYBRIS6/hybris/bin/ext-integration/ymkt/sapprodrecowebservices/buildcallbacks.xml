@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<project name="sapprodrecowebservices_buildcallbacks">
+
+    <patternset id="extension.sapprodrecowebservices.binary.filter">
+        <patternset refid="extension.binary.filter"/>
+        <exclude name="node_modules/"/>
+        <exclude name="jsTarget/"/>
+        <exclude name="**/static-resources/dist/"/>
+        <exclude name="**/webroot/sapprodrecowebservices/"/>
+        <exclude name="**/webroot/css/style.css"/>
+        <exclude name="buildArtifacts/"/>
+    </patternset>
+
+    <patternset id="extension.sapprodrecowebservices.source.filter">
+        <patternset refid="extension.source.filter"/>
+        <exclude name="node_modules/"/>
+        <exclude name="jsTarget/"/>
+        <exclude name="**/static-resources/dist/"/>
+        <exclude name="**/webroot/sapprodrecowebservices/"/>
+        <exclude name="**/webroot/css/style.css"/>
+        <exclude name="buildArtifacts/"/>
+    </patternset>
+
+	<patternset id="extension.sapprodrecowebservices.production.filter">
+	    <patternset refid="extension.production.filter"/>
+	    <exclude name="node_modules/**"/>
+		<exclude name="jsTarget/"/>
+        <exclude name="seLibraries/"/>
+		<exclude name="buildArtifacts/"/>
+	</patternset>
+
+	<!-- PHX-1006
+	<macrodef name="sapprodrecowebservices_before_clean">
+		<sequential>
+			<if>
+				<isset property="ext.npmancillary.path"/>
+				<then>
+					<removeLinkToSELibraries path="${ext.sapprodrecowebservices.path}"/>
+					<removeLink path="${ext.sapprodrecowebservices.path}/tmp"/>
+					<removeLink path="${ext.sapprodrecowebservices.path}/jsTarget"/>
+					
+					<removeNodeModulesSymlink path="${ext.sapprodrecowebservices.path}"/>
+					
+					<if>
+		                <isset property="ext.cmssmartedit.path"/>
+		                <then>
+		                    <echo level="info" message="copying sapprodrecowebservices features to the cmssmartedit extension"/>
+		                    <copy overwrite="true" todir="${ext.cmssmartedit.path}/web/featureExtensions/sapprodrecowebservices" verbose="true">
+		                        <fileset dir="${ext.sapprodrecowebservices.path}/web/features/">
+		                            <include name="**/**.*"/>
+		                        </fileset>
+		                    </copy>
+		                </then>
+		            </if>
+
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="sapprodrecowebservices_before_build">
+		<sequential>
+			<if>
+                <isset property="ext.smartedit.path"/>
+                <then>
+					<copy file="${ext.smartedit.path}${file.separator}smarteditcontainerJSTests${file.separator}protractor-conf.js" tofile="${ext.sapprodrecowebservices.path}${file.separator}jsTests${file.separator}protractor-conf.js"/>
+	            </then>
+	        </if>
+            <if>
+				<isset property="ext.npmancillary.path"/>
+				<then>
+					<linkToSELibraries path="${ext.sapprodrecowebservices.path}"/>
+					<gruntBuild path="${ext.sapprodrecowebservices.path}" phase="compile"/>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<macrodef name="sapprodrecowebservices_before_yunit">
+		<sequential>
+			<if>
+				<isset property="ext.npmancillary.path"/>
+				<then>
+					<gruntBuild path="${ext.sapprodrecowebservices.path}" phase="test_only"/>
+				</then>
+			</if>
+		</sequential>
+	</macrodef>
+	-->
+
+</project>

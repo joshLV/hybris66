@@ -1,0 +1,136 @@
+@import 'cockpitng-globals.scss';
+$_excel-popups__configurable-flow-container-outer--space-x: $container-spacing-default__third * 2;
+$_excel-popups__configurable-flow-container-outer--space-y: $container-spacing-default__third;
+$_excel-popups__configurable-flow-container--margin: ($_excel-popups__configurable-flow-container-outer--space-y  * -1) ($_excel-popups__configurable-flow-container-outer--space-x * -1);
+
+$_attrpicker__value-container--width: 40%;
+$_attrpicker__main-container--bg-color: $white;
+$_attrpicker__main-container--border-top: $boxes--border__thin solid $grey__default;
+$_attrpicker__container-inner--space: $container-spacing-default__third;
+$_attrpicker__configurable-flow-container--margin: nth($_excel-popups__configurable-flow-container--margin,1) 0;
+$_attrpicker__configurable-flow-main-container--margin: 0 nth($_excel-popups__configurable-flow-container--margin,2);
+$_attrpicker__configurable-flow-main-container--width: calc(100% + #{nth($_attrpicker__configurable-flow-main-container--margin, 2) * -2});
+$_attrpicker__value-tree-inner--padding: nth($_excel-popups__configurable-flow-container--margin, 2)*-1;
+$_attrpicker__value-tree-inner--margin: $_attrpicker__value-tree-inner--padding * -1;
+$_attrpicker__value-tree-outer--margin: nth($_attrpicker__configurable-flow-main-container--margin,2);
+$_attrpicker__value-tree-outer--padding: nth($_attrpicker__configurable-flow-main-container--margin,2) * -1;
+$_attrpicker__value-filter--margin: 8px 0 $container-spacing-default__third;
+$_attrpicker__value-container--padding-top: $container-spacing-default__third;
+$_attrpicker__value-label--font-weight:  $font-weight-bold;
+
+$_attrpicker__choose-button-container--padding: 0 $_attrpicker__container-inner--space;
+$_attrpicker__choose-button-container--border: $boxes--border__medium solid $grey__default;
+$_attrpicker__choose-button-container--border-width: 0 nth($_attrpicker__choose-button-container--border, 1);
+$_attrpicker__choose-button--font-weight: $font-weight-normal;
+$_attrpicker__choose-button--border: $boxes--border__thin solid $blue__default;
+$_attrpicker__choose-button--color: $blue__default;
+$_attrpicker__choose-button--bg-color: $white;
+$_attrpicker__choose-button--margin-top: $_attrpicker__container-inner--space;
+$_attrpicker__choose-button-hover--bg-color: $blue__default;
+$_attrpicker__choose-button-hover--color: $white;
+$_attrpicker__choose-button-arrow--margin: $container-spacing-default__half;
+$_attrpicker__choose-button-arrow-side--padding: $container-spacing-default__base;
+$_attrpicker__choose-button-arrow--font: $font-family-fontawesome;
+
+$_attrpicker__checkbox-row--margin: 5px 0;
+
+$_attrpicker__add-button--content: $anglearrow__right--content;
+$_attrpicker__remove-button--content: $anglearrow__left--content;
+
+$_attrpicker__open-button--content: $anglearrow__down--content;
+$_attrpicker__close-button--content: $anglearrow__up--content;
+
+$_attrpicker__attr-selected-icon--color: $blue__default;
+$_attrpicker__attr-mandatory-icon--color: $grey__default;
+$_attrpicker__attr-mandatory-cell--bg-color: rgba($grey__light--600, 0.5);
+$_attrpicker__attr-mandatory-label-after--margin-left: 2px;
+
+$_attrpicker__attr-icon--size: 14px;
+$_attrpicker__attr-icon--margin-top: ceil($_attrpicker__attr-icon--size / 2)*-1;
+$_attrpicker__attr-icon--width: 28px;
+$_attrpicker__attr-check-icon--padding-left: 3px;
+
+
+$_attrpicker__attr-cell--border-radius: 3px;
+$_attrpicker__attr-cell--border: $boxes--border__thin solid $grey__default;
+$_attrpicker__attr-cell--margin-bottom: 5px;
+$_attrpicker__attr-cell--padding: $container-spacing-default__third 8px;
+
+
+$_attrpicker__notifier-label--margin-top: $container-spacing-default__third * -1;
+$_attrpicker__notifier-label--color: $white;
+$_attrpicker__notifier-label--font-weight: $font-weight-bold;
+$_attrpicker__notifier-container--bg-color: rgba($black__blueish--200, 0.85);
+$_attrpicker__notifier-container--animation: prompt-animation 0.2s linear;
+
+$_attrpicker__options-container--height: 40px;
+$_attrpicker__notifier-container--top: $_attrpicker__options-container--height;
+$_attrpicker__attr-tree-header-shadow---color: $_attrpicker__main-container--bg-color;
+$_attrpicker__attr-tree-header-shadow---box-shadow: 0 0 5px 3px;
+$_attrpicker__attr-tree--max-height: 550px;
+$_attrpicker__attr-tree--padding-top: 5px;
+
+$_attrpicker__attr-expand-btn--height: 18px;
+$_attrpicker__attr-localized-expand-btn-icon--size: 16px;
+$_attrpicker__attr-localized-expand-btn-icon--margin-top: floor($_attrpicker__attr-localized-expand-btn-icon--size/2) * -1;
+$_attrpicker__attr-localized-expand-btn-icon-arrow--margin-right: $_attrpicker__attr-localized-expand-btn-icon--size;
+$_attrpicker__attr-localized-expand-btn-icon--right: -2px;
+$_attrpicker__attr-localized-expand-btn--margin-right: $container-spacing-default__third;
+$_attrpicker__attr-localized-expand-btn--color: $blue__greyish--400;
+$_attrpicker__attr-localized-selected-expand-btn--color: $blue__default;
+$_attrpicker__attr-localized-selected-expand-btn-icon--bg-position: 0 ($_attrpicker__attr-localized-expand-btn-icon--size * -1);
+$_attrpicker__attr-localized-label--padding-right: ($_attrpicker__attr-localized-expand-btn-icon--size * 2 + 6px);
+$_attrpicker__attr-localized-child-cell--padding: 4px 8px;
+$_attrpicker__attr-localized-child-cell--margin-left: 38px;
+$_attrpicker__attr-localized-child-cell--width: calc(100% - #{$_attrpicker__attr-localized-child-cell--margin-left});
+$_attrpicker__attr-localized-language-label--border: $boxes--border__thin solid $blue__default;
+$_attrpicker__attr-localized-language-label--padding: 2px;
+$_attrpicker__attr-localized-language-label--bg-color: $blue__light--200;
+$_attrpicker__attr-localized-language-label--min-width: 45px;
+$_attrpicker__attr-localized-language-label--border-radius: 3px;
+$_attrpicker__attr-localized-language-label--height: 24px;
+$_attrpicker__attr-localized-language-cell-content--padding: (nth($_attrpicker__attr-localized-language-label--border, 1) + nth($_attrpicker__attr-localized-language-label--padding, 1)) 0;
+$_attrpicker__attr-localized-language-label--margin: (ceil($_attrpicker__attr-localized-language-label--height/2)*-1) ($_attrpicker__attr-localized-expand-btn--margin-right - 4px) (nth($_attrpicker__attr-localized-language-cell-content--padding, 1)*-1) 0;
+$_attrpicker__attr-localized-child-label--padding-right: $_attrpicker__attr-localized-language-label--min-width + nth($_attrpicker__attr-localized-language-label--margin, 2);
+
+$_excel-import-wizard__upload-btn--border: $_attrpicker__choose-button--border;
+$_excel-import-wizard__upload-btn--color: $_attrpicker__choose-button--color;
+$_excel-import-wizard__upload-btn--bg-color: $_attrpicker__choose-button--bg-color;
+$_excel-import-wizard__upload-btn-hover--bg-color: $_attrpicker__choose-button-hover--bg-color;
+$_excel-import-wizard__upload-btn-hover--color: $_attrpicker__choose-button-hover--color;
+
+$_excel-import-wizard__drop-area--height: 140px;
+
+$_excel-import-wizard__component-container--margin: $container-spacing-default__half 0;
+
+$_excel-import-wizard__drop-area-icon--width: 120px;
+$_excel-import-wizard__drop-area-icon--height: 48px;
+$_excel-import-wizard__drop-area-icon--margin-top: $container-spacing-default__third;// ceil($_excel-import-wizard__drop-area-icon--height/2)*-1;
+$_excel-import-wizard__drop-area-icon--margin-left: $_excel-import-wizard__drop-area-icon--width*-1;
+$_excel-import-wizard__drop-area-icon--background: url('../images/excel/icon_upload-file-area.svg') no-repeat 0 0;
+
+$_excel-import-wizard__drop-area--color: $grey__default--600;
+$_excel-import-wizard__drop-area--border-radius: $_attrpicker__attr-cell--border-radius;
+$_excel-import-wizard__drop-area--border: $boxes--border__thin dashed $_excel-import-wizard__drop-area--color;
+$_excel-import-wizard__drop-area--bg-color: transparent;
+$_excel-import-wizard__drop-area-on-add--bg-color: $grey__light--1200;
+$_excel-import-wizard__drop-area-label--padding-left: $_excel-import-wizard__drop-area-icon--width;
+
+$_excel-import-wizard__attachment-item--border-top: $boxes--border__thin solid $grey__default;
+$_excel-import-wizard__attachment-item--padding: 5px 0;
+$_excel-import-wizard__attachment-delete-btn--size: 24px;
+$_excel-import-wizard__attachment-label--height: $_excel-import-wizard__attachment-delete-btn--size;
+$_excel-import-wizard__attachment-label--line-height: $_excel-import-wizard__attachment-delete-btn--size;
+$_excel-import-wizard__attachment-label--max-width: calc(100% - #{$_excel-import-wizard__attachment-delete-btn--size + 5px});
+$_excel-import-wizard__attachment-entry--font-size: $font-size__small;
+$_excel-import-wizard__attachment-entry-icon--margin-right: 5px;
+
+/* Small Window */
+$_small_attrpicker__attr-tree--max-height: 300px;
+$_small_attrpicker__choose-button-container--padding: $_attrpicker__container-inner--space $_attrpicker__container-inner--space;
+$_small_attrpicker__choose-button-container--border-width: nth($_attrpicker__choose-button-container--border, 1) 0;
+$_small_attrpicker__choose-button--max-width: 40%;
+
+$_small_attrpicker__remove-button--margin-right: $container-spacing-default__half;
+$_small_attrpicker__remove-button--content: $anglearrow__up--content;
+$_small_attrpicker__add-button--content: $anglearrow__down--content;

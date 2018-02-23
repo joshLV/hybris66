@@ -1,0 +1,176 @@
+{"baseStoreUid": "electronics",
+  "channel": "B2C",
+  "creationDate": "20171102",
+  "currencyIsoCode": "USD",
+  "deliveryMode": "standard-gross",
+  "distributionChannel": "10",
+  "division": "00",
+  "orderId": "0006503111",
+  "receiverName": "WEFCLNT504",
+  "salesOrganization": "1000",
+  "sapCpiConfig": {
+    "sapCpiTargetSystem": {
+      "client": "910",
+      "receiverName": "SAPQE4",
+      "receiverPort": "QE4CLNT910",
+      "senderName": "HBRGTSM07",
+      "senderPort": "HBRGTSM07",
+      "url": "http://ldai1qe6.wdf.sap.corp:44300/sap/bc/srt/idoc?sap-client=910",
+      "username": "QE6Credentials"
+    }
+  },
+  "sapCpiCreditCardPayments": [
+    {
+      "ccOwner": "redwan wahbeh",
+      "orderId": "0006503111",
+      "paymentProvider": "Mockup",
+      "requestId": "mock",
+      "subscriptionId": "MockedSubscriptionID",
+      "validToMonth": "01",
+      "validToYear": "22220131"
+    }
+  ],
+  "sapCpiOrderAddresses": [
+    {
+      "city": "New York",
+      "countryIsoCode": "US",
+      "documentAddressId": "2",
+      "firstName": "Redwan",
+      "houseNumber": "",
+      "languageIsoCode": "en",
+      "lastName": "Wahbeh",
+      "orderId": "0006503111",
+      "postalCode": "10002",
+      "regionIsoCode": "NY",
+      "street": "111 Duke",
+      "telNumber": "",
+      "titleCode": "mr"
+    },
+    {
+      "city": "New York",
+      "countryIsoCode": "US",
+      "documentAddressId": "1",
+      "email": "redwan@sap.com",
+      "firstName": "Redwan",
+      "houseNumber": "",
+      "languageIsoCode": "en",
+      "lastName": "Wahbeh",
+      "orderId": "0006503111",
+      "postalCode": "10002",
+      "regionIsoCode": "",
+      "street": "111 Duke",
+      "telNumber": "",
+      "titleCode": ""
+    },
+    {
+      "city": "New York",
+      "countryIsoCode": "US",
+      "documentAddressId": "1",
+      "email": "redwan@sap.com",
+      "firstName": "Redwan",
+      "houseNumber": "",
+      "languageIsoCode": "en",
+      "lastName": "Wahbeh",
+      "orderId": "0006503111",
+      "postalCode": "10002",
+      "regionIsoCode": "",
+      "street": "111 Duke",
+      "telNumber": "",
+      "titleCode": ""
+    }
+  ],
+  "sapCpiOrderItems": [
+    {
+      "entryNumber": "0",
+      "itemCategory": "TAB",
+      "namedDeliveryDate": "20171103",
+      "orderId": "0006503111",
+      "plant": "1000",
+      "productCode": "MATDEMO55_01",
+      "productName": "5.5 Demo test material 01",
+      "quantity": "1",
+      "unit": "PF"
+    }
+  ],
+  "sapCpiOrderPriceComponents": [
+    {
+      "absolute": "true",
+      "conditionCode": "PPR0",
+      "conditionCounter": "3",
+      "currencyIsoCode": "USD",
+      "entryNumber": "0",
+      "orderId": "0006503111",
+      "priceQuantity": "1.0",
+      "unit": "PF",
+      "value": "300.0"
+    },
+    {
+      "absolute": "true",
+      "conditionCode": "MWST",
+      "conditionCounter": "25",
+      "currencyIsoCode": "USD",
+      "entryNumber": "0",
+      "orderId": "0006503111",
+      "priceQuantity": "1.0",
+      "unit": "PF",
+      "value": "10.0"
+    },
+    {
+      "absolute": "true",
+      "conditionCode": "ZSHN",
+      "conditionCounter": "1",
+      "currencyIsoCode": "USD",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "value": "11.99"
+    },
+    {
+      "absolute": "true",
+      "conditionCode": "ZPAY",
+      "conditionCounter": "2",
+      "currencyIsoCode": "USD",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "value": "0.0"
+    },
+    {
+      "absolute": "true",
+      "conditionCounter": "15",
+      "currencyIsoCode": "USD",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "value": "-20.0"
+    }
+  ],
+  "sapCpiPartnerRoles": [
+    {
+      "documentAddressId": "2",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "partnerId": "JV02",
+      "partnerRoleCode": "WE"
+    },
+    {
+      "documentAddressId": "1",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "partnerId": "JV02",
+      "partnerRoleCode": "RE"
+    },
+    {
+      "documentAddressId": "1",
+      "entryNumber": "-1",
+      "orderId": "0006503111",
+      "partnerId": "JV02",
+      "partnerRoleCode": "AG"
+    },
+    {
+      "entryNumber": "0",
+      "orderId": "0006503111",
+      "partnerId": "1000",
+      "partnerRoleCode": "LF"
+    }
+  ],
+  "shippingCondition": "01",
+  "transactionType": "ZTAH"
+}

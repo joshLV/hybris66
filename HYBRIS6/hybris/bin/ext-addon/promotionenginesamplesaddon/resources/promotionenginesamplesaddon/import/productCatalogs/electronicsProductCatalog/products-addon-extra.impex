@@ -1,0 +1,3 @@
+INSERT_UPDATE CatalogVersionToRuleEngineContextMapping;context(name)[unique=true];catalogVersion(catalog(id),version)[unique=true]
+;promotions-context;electronicsProductCatalog:Online
+;promotions-preview-context;electronicsProductCatalog:Staged

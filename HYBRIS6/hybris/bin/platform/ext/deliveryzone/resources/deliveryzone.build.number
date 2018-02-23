@@ -1,0 +1,10 @@
+#Ant properties
+#Wed Nov 29 15:16:25 GMT 2017
+builddate=20171129 1516
+description=deliveryzone
+group.id=de.hybris.platform
+module.name=platform-module
+name=deliveryzone
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

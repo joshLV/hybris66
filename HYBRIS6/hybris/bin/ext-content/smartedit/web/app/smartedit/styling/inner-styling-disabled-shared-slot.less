@@ -1,0 +1,78 @@
+@disabled-shared-slot__icon--outer-background: fade(@smartedit-grey4, 50%);
+@disabled-shared-slot-popover-border-radius: 3px;
+
+.disabled-shared-slot {
+  background-color: fade(@smartedit-grey24, 15%);
+  width: 100%;
+  height: 100%;
+  color: @smartedit-grey25;
+  text-align: center;
+  word-wrap: break-word;
+  text-overflow: clip;
+  position: relative;
+}
+
+.disabled-shared-slot__icon--outer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: fade(@smartedit-grey4, 50%);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &.disabled-shared-slot__icon--outer-globe {
+    border: 2px solid @smartedit-white;
+  }
+}
+
+.disabled-shared-slot__icon--inner {
+  font-weight: bold;
+  color: @smartedit-white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.hyicon-lock:before {
+    font-size: 42px;
+    position: relative;
+    left: 5px;
+  }
+  &.hyicon-linked:before {
+    font-size: 11px;
+  }
+  &.hyicon-globe:before {
+    font-size: 24px;
+  }
+}
+
+.disabled-shared-slot-hovered {
+    background-color: fade(@smartedit-grey24, 35%);
+}
+
+.disabled-shared-slot__icon--outer-hovered {
+  background-color: @smartedit-blue4;
+}
+
+.disabled-shared-slot-tooltip__wrapper {
+  background: @default-greyblue;
+  display: flex;
+  align-items: center;
+  border-radius: @disabled-shared-slot-popover-border-radius;
+}
+
+.disabled-shared-slot-tooltip__info {
+  color: @smartedit-white;
+  padding: .4*@smartedit-gutter;
+}
+
+// hovered
+div[data-smartedit-component-type='ContentSlot']:hover .popoveredElement:after,
+div[data-smartedit-component-type='ContentSlot']:hover .popoveredElement:before {
+    opacity: 1;
+}

@@ -1,0 +1,113 @@
+@import "cockpitng-globals.scss";
+
+$_collaboration__sidebar--bg-color: $grey__light--1200;
+$_collaboration__sidebar--z-index: 99;
+$_collaboration__sidebar-header--z-index: 17;
+$_collaboration__sidebar--width: 410px;
+$_collaboration__sidebar-default--max-width: $_collaboration__sidebar--width;
+$_collaboration__sidebar--box-shadow-blur: 5px;
+$_collaboration__sidebar--box-shadow: 0 0 $_collaboration__sidebar--box-shadow-blur 1px rgba($black, .5);
+$_collaboration__sidebar--padding-left: $_collaboration__sidebar--box-shadow-blur;
+$_collaboration__sidebar--margin-left: $_collaboration__sidebar--padding-left * -1;
+$_collaboration__sidebar--border-color: $grey__light--100;
+$_collaboration__sidebar--border-width: $boxes--border__thin;
+$_collaboration__sidebar--border: $_collaboration__sidebar--border-width solid $_collaboration__sidebar--border-color;
+$_collaboration__sidebar-overlap--width: 0;
+
+$_collaboration__header-hp--color: $blue__default;
+$_collaboration__header--padding-x: $container-spacing-default__third;
+$_collaboration__header--padding: $container-spacing-default__half $_collaboration__header--padding-x;
+
+$_collaboration__flex-layout-contents--width: calc(100% - #{$_collaboration__sidebar--width - $_collaboration__sidebar-overlap--width});
+
+$_collaboration__toolbar-widget--height: $globals__toolbar--height;
+$_collaboration__toolbar-widget--bg-color: $white;
+$_collaboration__toolbar-widget--box-shadow: 0 0 3px 0 rgba($black, 0.5);
+$_collaboration__toolbar-widget-action-group--line-height: $_collaboration__toolbar-widget--height;
+
+$_collaboration__toolbar-side-action-group--padding-right: 25px;
+$_collaboration__toolbar-center-action-group--padding-right: $_collaboration__header--padding-x;
+
+$_collaboration__toolbar-history--line-height: 32px;
+$_collaboration__toolbar-history-title--height: $_collaboration__toolbar-history--line-height;
+$_collaboration__toolbar-history-title--indent: 100px;
+$_collaboration__toolbar-history-title--max-width: calc(100% - #{$_collaboration__toolbar-history-title--indent});
+$_collaboration__toolbar-history-container--padding-v: floor(($_collaboration__toolbar-widget--height - $_collaboration__toolbar-history--line-height)/2);
+
+$_collaboration__center-view--bg-color: $grey__light--1100;
+
+
+$_collaboration__tabs--bg-color: $grey__light--1400;
+$_collaboration__tabs-tab-content--padding: 0 ($container-spacing-default__third * 2);
+$_collaboration__tabs-tab-text--padding: ($container-spacing-default__third * 2) 5px 10px;
+$_collaboration__innert-tabs-tab-text--padding-bottom: nth($_collaboration__tabs-tab-text--padding, 1);
+
+$_collaboration__inner-tabs--bg-color: $white;
+$_collaboration__inner-tab--border-width: 2px;
+$_collaboration__inner-tab--border-bottom: $_collaboration__inner-tab--border-width solid transparent;
+$_collaboration__inner-tab--selected-border-bottom: $_collaboration__inner-tab--border-width solid $blue__default;
+$_collaboration__title--color: $black;
+$_collaboration__title--font-weight: $font-weight-bold;
+
+$_collaboration-center-overview-layout-element--bg-color: $white;
+$_collaboration-center-browser__header-caption--padding: ($container-spacing-default__third - 2px) 0;
+$_collaboration-center-overview-title--font-size: $font-size__large;
+
+$_collaboration-center-overview__listitem-hyperlink--font-weight: $font-weight-bold;
+$_collaboration-center-overview__listitem-details-current--padding-top: 3px;
+$_collaboration-center-overview__listitem-details-current--font-size: $font-size__semi-base; //$font-size__small;
+
+$_collaboration-center-browser__toolbar-default-box--height: $editor-defaults__inline-box--height;
+$_collaboration-center-browser__toolbar-tool--margin-left: $container-spacing-default__third;
+$_collaboration-center-browser__toolbar-action-group--height: 28px;
+$_collaboration-center-browser__toolbar-action-group--margin: floor(($_collaboration-center-browser__toolbar-default-box--height - $_collaboration-center-browser__toolbar-action-group--height)/2) 0;
+
+$_collaboration-center-browser__list-side-cell--padding-x: $container-spacing-default__base;
+$_collaboration-center-browser__tree-view-treecell--padding-x: $_collaboration-center-browser__list-side-cell--padding-x;
+
+$_collaboration-center-browser__default--border-width: $boxes--border__thin;
+$_collaboration-center-browser__default--bg-color: $_collaboration-center-overview-layout-element--bg-color;
+
+$_collaboration-center-browser__status-icon--margin-right: 5px;
+$_collaboration-center-browser__listbox-header-border--border-color: $grey__light--1100;
+$_collaboration-center-browser__listitem--border-color: $_collaboration-center-browser__listbox-header-border--border-color;
+$_collaboration-center-browser__listitem--border: $_collaboration-center-browser__default--border-width solid $_collaboration-center-browser__listitem--border-color;
+$_collaboration-center-browser__listbox-table--margin-top: $_collaboration-center-browser__default--border-width * -1;
+
+$_collaboration-center-browser__header-actioncontainer--padding-x: $container-spacing-default__base;
+$_collaboration-center-browser__header-actioncontainer--padding: $container-spacing-default__base $_collaboration-center-browser__header-actioncontainer--padding-x $container-spacing-default__half;
+$_collaboration-center-browser__header-actioncontainer-nested-center-full-width--margin-x: $_collaboration-center-browser__header-actioncontainer--padding-x  * -1;
+$_collaboration-center-browser__header-actioncontainer-nested-center--padding-top: $container-spacing-default__base +  $container-spacing-default__half;
+
+$_collaboration-center-details__groupbox-title--font-size: $_collaboration-center-overview-title--font-size;
+$_collaboration-center-details__groupbox-title--font-weight: $font-weight-normal;
+$_collaboration-center-details__groupbox-title--line-height: 1;
+$_collaboration-center-details__instant-edit-label--line-height: $font-size__medium;
+$_collaboration-center-details__instant-edit-label--margin-bottom: 8px;
+$_collaboration-center-details__attribute-label--color: $black;
+$_collaboration-center-details__attribute-label--font-weight: $font-weight-bold;
+$_collaboration-center-details__header-caption--padding-top: 22px;
+$_collaboration-center-details__static-slot--bg-color: $grey__light--1300;
+$_collaboration-center-details__summaryview-section-no-title--padding-bottom: $container-spacing-default__base;
+$_collaboration-center-details__summaryview-section-item-icon--top: 20px;
+
+
+$_collaboration-center-task__quicklist-header-toolbar--padding: 0;
+$_collaboration-center-task__quicklist-toolbar--bg-color: $white; //$grey__light--1200;
+$_collaboration-center-task__quicklist--border-color: $grey__light--800;
+$_collaboration-center-task__quicklist-header-title--font-size: $font-size__base;
+$_collaboration-center-task__quicklist-header-title--color: $black;
+$_collaboration-center-task__quicklist-header-title--height: $_collaboration__toolbar-widget--height;
+$_collaboration-center-task__quicklist-header-title--width: 350px;
+$_collaboration-center-task__quicklist-header-title--font-weight: $font-weight-bold;
+$_collaboration-center-task__quicklist-header-text--padding: 0 ($container-spacing-default__base - $container-spacing-default__third);
+$_collaboration-center-task__quicklist-header-text--max-width: $_collaboration-center-task__quicklist-header-title--width;
+$_collaboration-center-task__quicklist-border-shadow--box-shadow: inset $boxes--border__thin 0 0 0 $grey__light--800;
+$_collaboration-center-task__quicklist-toolbar-border-shadow--box-shadow: inset $boxes--border__thin $boxes--border__thin 0 0 $grey__light--800;
+$_collaboration-center-task__quicklist-toolbar--padding-left: $boxes--border__thin;
+$_collaboration-center-task__quicklist-toolbar-element--height: $_collaboration__toolbar-widget--height;
+
+$_collaboration-center-task__quicklist-toolbar-workflow-select--border-color: $grey__light--800;
+$_collaboration-center-task__quicklist-toolbar-workflow-select--focus-border-color: $blue__default;
+$_collaboration-center-task__quicklist-toolbar-workflow-select-container--margin-y: floor(($_collaboration__toolbar-widget--height - $editor-defaults__inline-box--height)/2);
+$_collaboration-center-task__quicklist-toolbar-workflow-select-button--hover-color: $_collaboration-center-task__quicklist-toolbar-workflow-select--focus-border-color;

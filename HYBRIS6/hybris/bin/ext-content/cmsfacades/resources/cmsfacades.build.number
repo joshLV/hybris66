@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 27 15:48:38 UTC 2017
+builddate=20171127 1548
+description=cmsfacades
+group.id=de.hybris.platform
+module.name=platform-module
+name=cmsfacades
+releasedate=20171122 1230
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

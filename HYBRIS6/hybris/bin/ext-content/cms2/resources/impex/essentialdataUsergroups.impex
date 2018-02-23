@@ -1,0 +1,10 @@
+INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)[mode=append];locname[lang=en]
+;basecmsmanagergroup;employeegroup;Base CMS Manager Group
+;cmsmanagergroup;employeegroup;CMS Manager Group
+
+INSERT_UPDATE PrincipalGroupRelation;source(uid)[unique=true];target(uid)[unique=true]
+;cmsmanagergroup;basecmsmanagergroup
+
+INSERT_UPDATE Employee;UID[unique=true];groups(uid)[mode=append];sessionLanguage(isocode);
+;cmsmanager;cmsmanagergroup;en;
+

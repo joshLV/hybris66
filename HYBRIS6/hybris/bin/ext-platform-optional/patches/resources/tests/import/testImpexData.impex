@@ -1,0 +1,2 @@
+INSERT_UPDATE Currency ; isocode[unique=true] ; conversion ; digits ; symbol
+                       ; $defaultCurrency     ; 1          ; 2      ; $

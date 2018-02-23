@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 15 10:32:23 UTC 2017
+builddate=20171115 1032
+description=chinesepspwechatpaysamplesaddon
+group.id=de.hybris.platform
+module.name=platform-module
+name=chinesepspwechatpaysamplesaddon
+releasedate=20171106 1119
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

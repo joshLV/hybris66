@@ -1,0 +1,12 @@
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$jarResourceCms=jar:com.hybris.yprofile.constants.PrivacyoverlayeraddonConstants&/privacyoverlayeraddon/import/cockpit/cmscockpit
+
+
+$lang=en
+
+INSERT_UPDATE ConsentReferenceLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];linkName[lang=$lang]
+;;SAPHybrisProfileConsentManagerLink;SAPHybrisProfileConsentManagerLink;"https://profile-manager.us-east.modules.yaas.io?t={tenant}&cr={consent-reference}&token={consent-reference-token}";SAPHybrisProfileConsentManagerLink;SAPHybrisProfileConsentManagerLink;newWindow;"SAP Hybris Profile Consent Manager"
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef)[mode=append];&nodeRef
+;HybrisNavNode;;Hybris Pages;ApparelUKNavNode;SAPHybrisProfileConsentManagerLink;HybrisNavNode

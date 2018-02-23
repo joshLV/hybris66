@@ -1,0 +1,61 @@
+@import "cockpitng-globals.scss";
+
+$_workflows__default--border-color: $grey__light--100;
+$_workflows__default--padding: floor($container-spacing-default__base  - $container-spacing-default__third);
+$_workflows__hyperlink--hover-color: $blue__default;
+$_workflows__header--padding: $_workflows__default--padding;
+
+$_workflows__list-item-hover--bg-color: $grey__light--1200;
+$_workflows__list-item--border-width: $boxes--border__thin;
+$_workflows__list-item--border-color: $grey__light--800;
+$_workflows__list-item-last--margin-bottom: $_workflows__list-item--border-width * -1;
+
+$_workflows__list-item-content--padding: ($container-spacing-default__half + $container-spacing-default__third) 8px ($container-spacing-default__half + $container-spacing-default__third) 4px;
+
+$_workflows__list-content--padding: 0 0 0 $_workflows__default--padding;
+$_workflows__list-inner-content--padding: $container-spacing-default__third 8px 0 0;
+$_workflows__list-button--width: 24px;
+$_workflows__list-button-empty-width: $_workflows__list-button--width;
+$_workflows__list-button-disabled--color: $grey__default;
+$_workflows__list-text-button--font-size: $font-size__base;
+$_workflows__list-text-button--color: $_workflows__hyperlink--hover-color;
+$_workflows__list-title--max-width: calc(100% - #{$_workflows__list-button--width});
+$_workflows__list-title--font-weight: $font-weight-bold;
+$_workflows__list-title--font-size: $font-size__base;
+$_workflows__list-title--color: inherit;
+$_workflows__list-sub-title--font-weight: $font-weight-normal;
+$_workflows__list-info-container--padding-top: 5px;
+$_workflows__list-info-label--padding-x: 5px;
+$_workflows__list-text-button--font-size: $font-size__base;
+
+$_workflows__list-bottom--padding: $container-spacing-default__third 0;
+
+$_workflows__drop-area-plus--color: $black__blueish--200;
+$_workflows__drop-area-plus--border-radius: 5px;
+
+$_workflows__drop-area-plus-icon--size: 15px;
+$_workflows__drop-area-plus-icon--border-width: $boxes--border__thin;
+
+$_workflows__drop-area--hover-color: $blue__default;
+$_workflows__drop-area--border: $boxes--border__thin dashed $_workflows__drop-area-plus--color;
+$_workflows__drop-area--border-radius: $_workflows__drop-area-plus--border-radius;
+
+$_workflows__drop-area--padding: $container-spacing-default__third;
+
+$_workflows__drop-area-span--margin: 0 $_workflows__drop-area-plus-icon--size;
+$_workflows__drop-area-plus-icon--margin: (floor($_workflows__drop-area-plus-icon--size/2) * -1) 0 0;
+$_workflows__drop-area-plus-button--size: 28px;
+
+$_workflows__footer--border-top: $boxes--border__thin solid $_workflows__default--border-color;
+$_workflows__footer--padding: $_workflows__default--padding;
+
+$_workflows__footer-plus--color: $black__blueish--200;
+$_workflows__footer-plus-label--margin-top: $container-spacing-default__third;
+
+$_workflows__menu-popup-right--margin-top: -32px;
+$_workflows__menu-popup-right--margin-left: -24px;
+
+$_workflows__menu-popup-top-right-pointer--indent: $container-spacing-default__third;
+$_workflows__menu-popup-top-right--margin-top: -4px;
+$_workflows__menu-popup-top-right--margin-left: $_workflows__menu-popup-top-right-pointer--indent - 2px;
+$_workflows__menu-popup-top--margin-top: 7px;

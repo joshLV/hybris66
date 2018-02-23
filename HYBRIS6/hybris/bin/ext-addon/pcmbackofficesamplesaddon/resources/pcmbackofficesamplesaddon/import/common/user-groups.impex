@@ -1,0 +1,64 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+INSERT_UPDATE BackofficeRole;UID[unique=true];groups(uid)[mode=append];locName;name;backOfficeLoginDisabled;authorities
+;backofficeproductmanagergroup;employeegroup;Backoffice Product Manager;Backoffice Product Manager;FALSE;backofficeproductmanager
+;backofficeproductadministratorgroup;admingroup,backofficeproductmanagergroup;Backoffice Product Administrator;Backoffice Product Administrator;FALSE;backofficeproductadministrator
+
+INSERT_UPDATE Employee;UID[unique=true];name;groups(uid);description;password
+;BackofficeProductManager;Backoffice Product Manager;backofficeproductmanagergroup;Backoffice Product Manager User has access to the PCM Backoffice Cockpit.;1234
+;BackofficeProductAdministrator;Backoffice Product Administrator;backofficeproductadministratorgroup;Backoffice Product Administrator User has access to the Administraction Cockpit and PCM Backoffice Cockpit.;1234
+;BackofficeWorkflowUser;Backoffice Workflow Sample User;backofficeworkflowusergroup;Backoffice Workflow Sample User.;1234
+;BackofficeWorkflowAdministrator;Backoffice Workflow Administrator;backofficeworkflowadmingroup;Backoffice Workflow Administrator.;1234
+
+
+$START_USERRIGHTS;;;;;;;;;
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+UserGroup;backofficeproductmanagergroup;;;;;;;;
+
+# Access Rights for Products & Catalog for Backoffice Product Manager ;;;;;;;;;
+;;;;ItemSyncTimestamp;+;;;
+;;;;SyncItemJob;+;;;
+;;;;Type;+;;;
+;;;;Product;+;+;+;+;+;
+;;;;Category;+;+;+;+;+;
+;;;;VariantType;+;+;+;+;+;
+;;;;Catalog;+;;;
+;;;;CatalogVersion;+;+;+;+;+;
+;;;;ClassificationAttributeUnit;+;;;
+;;;;Media;+;+;+;+;+;
+;;;;MediaContainer;+;+;+;+;+;
+;;;;MediaFormat;+;+;+;+;+;
+;;;;MediaFolder;+;+;+;+;+;
+;;;;Vendor;+;+;+;+;+;
+;;;;StockLevel;+;+;+;+;+;
+;;;;Tax;+;+;+;+;+;
+;;;;TaxRow;+;+;+;+;+;
+;;;;PriceRow;+;+;+;+;+;
+;;;;ProductFeature;+;+;+;+;+;
+;;;;ProductReference;+;+;+;+;+;
+;;;;Warehouse;+;+;+;+;+;
+;;;;ProductTaxCode;+;+;+;+;+;
+;;;;ProductOrderLimit;+;+;+;+;+;
+;;;;Job;+;+;+;+;+;
+;;;;CronJob;+;+;+;+;+;
+;;;;JobLog;+;+;+;+;+;
+;;;;CronJobHistory;+;+;+;+;+;
+;;;;AbstractComment;+;+;+;+;+;
+;;;;Comment;+;+;+;+;+;
+;;;;Reply;+;+;+;+;+;
+;;;;Domain;+;+;+;+;+;
+;;;;Component;+;+;+;+;+;
+;;;;CommentType;+;+;+;+;+;
+;;;;CommentUserSetting;+;+;+;+;+;
+;;;;CommentMetadata;+;+;+;+;+;
+;;;;UserGroup;+;;;;;
+$END_USERRIGHTS;;;;;

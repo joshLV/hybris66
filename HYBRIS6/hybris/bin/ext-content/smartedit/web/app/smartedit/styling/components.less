@@ -1,0 +1,491 @@
+.ySEInfiniteScrolling-container {
+    overflow-y: scroll;
+    max-height: 200px
+}
+
+.ySEInfiniteScrolling {
+    overflow-y: hidden;
+}
+
+.panel__ySEInfiniteScrolling {
+    border: none;
+    margin-bottom: 0;
+    background: none;
+}
+
+#experience-selector-btn:focus,
+#experience-selector-btn:active {
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+/********************************************************
+                    TOOLBAR
+*********************************************************/
+
+.toolbar-action {
+    position: relative;
+}
+
+.toolbar-action--button--txt {
+    display: block;
+    font-family: @font-open-sans;
+    font-size: 10px;
+    font-weight: @font-weight--semibold;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.toolbar-action.open .toolbar-action--button--txt {
+    color: @smartedit-white;
+}
+
+.toolbar-action--button {
+    padding: 5px 5px 4px 5px;
+    min-width: 104px;
+    border-top: 1px transparent;
+    border-bottom: 1px transparent;
+}
+
+.open .dropdown-toggle.toolbar-action--button {
+    box-shadow: none;
+}
+
+.toolbar-action--button:hover,
+.toolbar-action--button:focus,
+.toolbar-action--button:active,
+.toolbar-action--button:hover:active,
+.toolbar-action--button {
+    border-right: @smartedit-border1;
+    background-color: @smartedit-grey;
+    color: @smartedit-blue;
+    box-shadow: none;
+    outline: none;
+    outline-offset: 0;
+}
+
+.toolbar-action--button:hover,
+.toolbar-action--button:focus,
+.toolbar-action--button:active,
+.toolbar-action--button:hover:active {
+    opacity: 0.6;
+}
+
+.toolbar-action--include {
+    background-color: @smartedit-lightblue;
+    border: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    min-width: 260px;
+}
+
+.toolbar-action.open .toolbar-action--button {
+    background-color: @smartedit-lightblue;
+    opacity: 1;
+}
+
+.toolbar-action.open .toolbar-action--button:hover,
+.toolbar-action.open .toolbar-action--button:active,
+.toolbar-action.open .toolbar-action--button:focus {
+    background-color: @smartedit-lightblue;
+    color: @smartedit-white;
+    opacity: 1;
+    border-right: @smartedit-border1;
+}
+
+.toolbar-action.open .toolbar-action--button {
+    border-top: 1px transparent;
+    border-bottom: 1px transparent;
+    border-right: @smartedit-border1;
+}
+
+#se-items-selector-dropdown, #userGroups-selector {
+    span li.ui-select-match-item {
+        width: 98%;
+    }
+}
+
+.se-generic-editor-multiple-dropdown__match item-printer.se-generic-editor-dropdown__item-printer div {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+/********************************************************
+                    More Menu Toolbar
+*********************************************************/
+
+.toolbar-action[data-item-key="moreActionsMenu"] {
+
+    .ySEVisibilityMenu {
+        width: auto;
+    }
+
+    .toolbar-action--button {
+        .hyicon-more::before {
+            line-height: 37px;
+        }
+    }
+
+    more-actions-menu-toolbar-item {
+        .ySEVisibilityMenu {
+            background-color: @white;
+        }
+    }
+
+}
+
+/********************************************************
+                    COMPONENT MENU
+*********************************************************/
+
+@se-component-menu--gutter: 15px;
+@se-component-menu--width: 780px;
+@se-component-item--image_width: 25%;
+@se-component-item--details_font-size: 11px;
+@se-component-menu--help-tip_font-size: 13px;
+@se-component-item--visibility_font-size: 20px;
+@se-component-menu--select-globe_font-size: 20px;
+@se-component-search--search-icon_font-size: 30px;
+@se-component-menu--result-overflow_height: 235px;
+
+.se-component-menu {
+    padding: 40px 40px 20px;
+    width: @se-component-menu--width;
+}
+
+.se-component-menu--tabs {
+    margin-bottom: 15px;
+    display: block;
+    .nav-tabs {
+        margin-bottom: 20px;
+    }
+    li {
+        text-align: left;
+        margin-right: 30px;
+        > a, > a:hover {
+            border: none;
+            padding: 5px 0;
+            color: @smartedit-blue12;
+            transition: none;
+        }
+        &.active a, &.active a:hover {
+            padding-bottom: 5px;
+            color: @smartedit-white;
+            border-bottom-width: 5px;
+            border-bottom-color: @smartedit-white;
+        }
+    }
+}
+
+.se-component-menu--item-container {
+    padding-bottom: 15px;
+    border-bottom: 1px solid @smartedit-grey17;
+    & .spinner-container1 > div,
+    & .spinner-container2 > div,
+    & .spinner-container3 > div {
+        background-color: @smartedit-white;
+    }
+    -ms-scrollbar-base-color: @smartedit-lightblue;
+    -ms-scrollbar-arrow-color: @smartedit-blue8;
+    -ms-scrollbar-highlight-color: @smartedit-lightblue;
+    -ms-scrollbar-shadow-color: @smartedit-blue8;
+}
+
+.se-component-menu--overflow,
+.se-component-menu--infinite-scroll > .ySEInfiniteScrolling-container {
+    max-height: none;
+    overflow-y: scroll;
+    height: @se-component-menu--result-overflow_height;
+}
+
+.se-component-menu--results {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.se-component-menu--item-wrap {
+    width: 50%;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: @se-component-menu--gutter;
+    padding-right: @se-component-menu--gutter;
+}
+
+.se-component-menu--select {
+    display: block;
+    .select2-container {
+        .select2-choice {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            height: auto;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .select2-chosen {
+                padding-left: 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .se-component-menu--select-local {
+                color: @smartedit-white !important;
+                position: relative;
+                top: 0;
+                line-height: normal;
+                padding: 3px 0;
+                .se-component-menu--select-globe {
+                    top: 3px;
+                }
+            }
+        }
+        .select2-arrow {
+            position: static;
+            height: auto !important;
+            width: auto !important;
+            display: block;
+            b {
+                color: @smartedit-white !important;
+                display: block;
+                margin: 0 !important;
+            }
+        }
+        .select2-drop {
+            border-radius: 0;
+            color: @smartedit-grey21;
+            margin-top: 0;
+        }
+        .select2-results {
+            margin: 0;
+            li {
+                margin-right: 0;
+            }
+            .select2-result-label {
+                padding: 10px;
+            }
+            .select2-highlighted {
+                background-color: @smartedit-white;
+                color: @smartedit-grey38;
+            }
+        }
+        .ui-select-choices-row:hover {
+            background-color: @smartedit-grey37;
+        }
+    }
+}
+
+.se-component-menu--select-local {
+    position: relative;
+}
+
+.se-component-menu--select-globe {
+    font-size: @se-component-menu--select-globe_font-size;
+    color: inherit;
+    position: absolute;
+    left: 2px;
+    top: 0;
+    line-height: 0;
+    & + .se-component-menu--select-text {
+        margin-left: 30px;
+    }
+}
+
+.se-component-menu--help-tip {
+    color: @smartedit-white;
+    font-family: @font-open-sans;
+    font-size: @se-component-menu--help-tip_font-size;
+    font-weight: normal;
+    text-transform: none;
+}
+
+/********************************************************
+                    Component Menu Search
+*********************************************************/
+
+.se-component-search {
+    margin-bottom: 20px;
+}
+
+.se-component-search--addon {
+    color: @smartedit-grey3;
+    font-size: large;
+    padding-right: 15px;
+}
+
+.se-component-search--search-icon {
+    font-size: @se-component-search--search-icon_font-size;
+    position: relative;
+    top: -4px;
+}
+
+.se-component-search--input {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+/********************************************************
+                    Component Item
+*********************************************************/
+
+
+.se-component-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.se-component-item--image {
+    width: @se-component-item--image_width;
+    &:hover {
+        cursor: grab;
+    }
+}
+
+.se-component-item--image-element {
+    max-width: 100%;
+}
+
+.se-component-item--details-container {
+    color: @smartedit-white;
+    width: (100% - @se-component-item--image_width);
+    padding-left: @se-component-menu--gutter;
+    display: flex;
+    align-items: center;
+}
+
+.se-component-item--details {
+    font-size: @se-component-item--details_font-size;
+    white-space: nowrap;
+    letter-spacing: 0.6px;
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.se-component-item--details-name,
+.se-component-item--details-type {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.se-component-item--details-name {
+    font-weight: @font-weight--semibold;
+}
+
+.se-component-item--details-type {
+    text-transform: uppercase;
+}
+
+.se-component-item--visibility {
+    padding-left: @se-component-menu--gutter;
+    font-size: @se-component-item--visibility_font-size;
+    color: @smartedit-white;
+    > .help-control {
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+}
+
+.se-component-item--disabled-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: fade(@smartedit-lightblue, 50%);
+    > .help-control {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.se-component-menu--tabs-header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.se-component-menu--clone-on-drop--label {
+    color: @smartedit-white;
+}
+
+.se-component-menu--clone-on-drop {
+    margin-top: 0;
+}
+
+/********************************************************
+                    More Menu
+*********************************************************/
+
+.toolbar-more-menu {
+    background-color: @smartedit-white;
+
+    .se-dropdown-item {
+        padding: 20px 25px;
+        font-size: 15px;
+    }
+
+    .se-dropdown-item--icon {
+        font-size: 22px;
+        top: 12px;
+        & + .se-dropdown-item--label {
+            margin-left: 40px;
+        }
+        &.hyicon-delete {
+            font-size: 26px;
+            top: 8px;
+        }
+    }
+}
+
+/********************************************************
+             YDropdown Item Delete
+*********************************************************/
+
+.se-dropdown-item--delete {
+    border-top: 1px solid @smartedit-grey22;
+}
+
+.se-dropdown-item--delete-page-popover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    > .help-control {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.se-dropdown-item--delete-page__disabled {
+    color: @smartedit-grey35;
+
+    .se-dropdown-item--icon {
+        color: @smartedit-grey35;
+    }
+}
+
+/********************************************************
+             Toolbar Item Delete
+*********************************************************/
+
+.toolbar-delete-action__popover {
+    .se-dropdown-item--delete-page-popover
+}
+
+.toolbar-delete-action__icon {
+    fill: currentColor;
+    width: 31px;
+    height: 37px;
+    display: block;
+    margin: 0 auto;
+}

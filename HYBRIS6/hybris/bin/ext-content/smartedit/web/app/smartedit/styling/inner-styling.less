@@ -1,0 +1,47 @@
+@import (reference) "node_modules/bootstrap/less/variables";
+@import (reference) "node_modules/techne/src/less/globals/_variables";
+@import "variables";
+
+#smarteditoverlay{
+
+  @import (reference) "node_modules/techne/src/less/overwrites/_buttons";
+  @import "node_modules/bootstrap/less/bootstrap";
+
+  z-index: @z-index-level-4;
+
+  @icon-font-path: "node_modules/bootstrap/dist/fonts/";
+  @import "node_modules/techne/src/less/components/_icons";
+  @import "node_modules/techne/src/less/components/_forms-checkboxes";
+
+  .btn-group {
+    box-shadow: none;
+  }
+  .btn-primary {
+    box-shadow: none;
+    color: @smartedit-white;
+    &:hover, :focus {
+      color: @smartedit-white;
+    }
+    &:hover:active {
+      color: @smartedit-white;
+    }
+  }
+
+  @import "reusable-components";
+  @import "contextmenu";
+  @import "slot-context-menu";
+  @import "synchronization";
+  @import "inner-styling-disabled-shared-slot";
+  @import "popover";
+
+}
+
+@import "drag-n-drop";
+
+.ySEEmptySlot{
+  min-height: 47px;
+}
+
+.se-storefront-component {
+  min-height: 48px;
+}

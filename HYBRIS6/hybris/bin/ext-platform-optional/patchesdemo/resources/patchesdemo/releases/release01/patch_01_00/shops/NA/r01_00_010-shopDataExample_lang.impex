@@ -1,0 +1,2 @@
+INSERT_UPDATE Customer ; uid[unique=true]                         ; name[default=testName]                   
+                       ; na\r01_00_010_shop_lang_[$shop_$lang]  

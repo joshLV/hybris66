@@ -1,0 +1,8 @@
+#
+# Import the Electronics BaseStore
+#
+
+# Create Base Store
+
+UPDATE BaseStore;uid[unique=true];name[lang=en]
+;electronics-eu;"Electronics Store EU"

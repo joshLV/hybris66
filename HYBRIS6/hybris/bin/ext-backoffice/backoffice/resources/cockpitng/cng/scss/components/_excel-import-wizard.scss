@@ -1,0 +1,135 @@
+@import "../support/_excel-variables.scss";
+
+.yw-excel-import-wizard {
+
+	&-component {
+		margin: $_excel-import-wizard__component-container--margin;
+
+		&.z-groupbox {
+			.z-groupbox-content {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&-fileupload {
+		border: $_excel-import-wizard__upload-btn--border;
+		background-color: $_excel-import-wizard__upload-btn--bg-color;
+		color: $_excel-import-wizard__upload-btn--color;
+		width: 100%;
+		display: block;
+
+		&:hover,
+		&:focus.yw-excel-import-wizard-fileupload:hover,
+		&:active {
+			background-color: $_excel-import-wizard__upload-btn-hover--bg-color;
+			color: $_excel-import-wizard__upload-btn-hover--color;
+			border-color: $_excel-import-wizard__upload-btn-hover--bg-color;
+			outline: none;
+			box-shadow: none;
+		}
+		&:focus{
+			border: $_excel-import-wizard__upload-btn--border;
+			background-color: $_excel-import-wizard__upload-btn--bg-color;
+			color: $_excel-import-wizard__upload-btn--color;
+		}
+	}
+
+	&-drop-anchor,
+	&-drop-upload {
+		height: $_excel-import-wizard__drop-area--height;
+		box-sizing: border-box;
+	}
+
+	&-drop-anchor {
+		border: $_excel-import-wizard__drop-area--border;
+		border-radius: $_excel-import-wizard__drop-area--border-radius;
+		background-color: $_excel-import-wizard__drop-area--bg-color;
+		color: $_excel-import-wizard__drop-area--color;
+		text-align: center;
+		display: inline-table;
+		width: 100%;
+
+		.z-label {
+			padding-left: $_excel-import-wizard__drop-area-label--padding-left;
+			color: inherit;
+			display: table-cell;
+			vertical-align: middle;
+			position: relative;
+			
+			&:before {
+				width: $_excel-import-wizard__drop-area-icon--width;
+				height: $_excel-import-wizard__drop-area-icon--height;
+				margin-top: $_excel-import-wizard__drop-area-icon--margin-top;
+				margin-left: $_excel-import-wizard__drop-area-icon--margin-left;
+				background: $_excel-import-wizard__drop-area-icon--background;
+				transform: translateY(-50%);
+				left: 50%;
+				position: absolute;
+				display: inline-block;
+				content: "";
+			}
+		}
+	}
+
+	&-drop-upload {
+		background: transparent;
+		
+		+ .yw-excel-import-wizard-drop-anchor {
+			background-color: $_excel-import-wizard__drop-area-on-add--bg-color;
+			
+		}
+		&[style*="display: none"] + .yw-excel-import-wizard-drop-anchor {
+			background-color: $_excel-import-wizard__drop-area--bg-color;
+			border-color: $_excel-import-wizard__drop-area--color;
+		}
+		> div {
+			display: none;
+		}
+	}
+
+	&-attachments {
+		border-top: $_excel-import-wizard__attachment-item--border-top;
+		padding: $_excel-import-wizard__attachment-item--padding;
+
+		&:first-child {
+			border-top: none;
+		}
+		a {
+		  color: darkslategray;
+		  font-size: $_excel-import-wizard__attachment-entry--font-size;
+		  text-decoration: none;
+
+		  .z-icon-paperclip {
+		  	margin-right: $_excel-import-wizard__attachment-entry-icon--margin-right;
+		  }
+		}
+		
+		&-btn {
+			display: inline-block;
+			float: right;
+			width: $_excel-import-wizard__attachment-delete-btn--size;
+			height: $_excel-import-wizard__attachment-delete-btn--size;
+			min-height: $_excel-import-wizard__attachment-delete-btn--size;
+
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				background: transparent;
+				padding: 0;
+				box-shadow: none;
+				border: none;
+			}
+		}
+		span {
+			height: $_excel-import-wizard__attachment-label--height;
+			line-height: $_excel-import-wizard__attachment-label--line-height;
+			max-width: $_excel-import-wizard__attachment-label--max-width;
+			display: inline-block;
+		}
+	}
+}

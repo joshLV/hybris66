@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 15 13:17:17 UTC 2017
+builddate=20171115 1317
+description=ordermanagementwebservices
+group.id=de.hybris.platform
+module.name=platform-module
+name=ordermanagementwebservices
+releasedate=20171013 1039
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

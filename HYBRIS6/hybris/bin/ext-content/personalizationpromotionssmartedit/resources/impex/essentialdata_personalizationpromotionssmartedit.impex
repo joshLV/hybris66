@@ -1,0 +1,4 @@
+INSERT_UPDATE SmartEditConfiguration;key[unique=true];value
+;applications.personalizationpromotionssmartedit;{"smartEditLocation":"/personalizationpromotionssmartedit/personalizationpromotionssmartedit/js/personalizationpromotionssmartedit.js"}
+;applications.personalizationpromotionssmarteditContainer;{"smartEditContainerLocation":"/personalizationpromotionssmartedit/personalizationpromotionssmartedit/js/personalizationpromotionssmarteditContainer.js"}
+;personalizationsmartedit.commercecustomization.promotions.enabled;true

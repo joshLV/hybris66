@@ -1,0 +1,11 @@
+#Ant properties
+#Tue Oct 24 14:45:27 CEST 2017
+builddate=20171024 1445
+description=hybrisdatasupplierhmc
+group.id=de.hybris.platform
+module.name=platform-module
+name=hybrisdatasupplierhmc
+releasedate=20170822 1156
+vendor=hybris
+version=6.5.0.0
+version.api=6.5.0

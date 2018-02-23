@@ -1,0 +1,30 @@
+@import "cockpitng-globals.scss";
+$_workflowactions__hyperlink--hover-color: $blue__default;
+$_workflowactions__header--padding: 20px;
+
+$_workflowactions__list-item-hover--bg-color: $grey__light--1200;
+$_workflowactions__list-item--border-width: $boxes--border__thin;
+$_workflowactions__list-item--border-color: $grey__light--800;
+$_workflowactions__list-item-last--margin-bottom: $_workflowactions__list-item--border-width * -1;
+$_workflowactions__list-item-content--padding: ($container-spacing-default__half + $container-spacing-default__third) 8px ($container-spacing-default__half + $container-spacing-default__third) 4px;
+$_workflowactions__list-content--padding: 0 0 0 20px;
+$_workflowactions__list-inner-content--padding: $container-spacing-default__third 8px 0 0;
+$_workflowactions__list-button--width: 24px;
+$_workflowactions__list-button-empty-width: $_workflowactions__list-button--width;
+
+$_workflowactions__list-title--font-weight: $font-weight-bold;
+$_workflowactions__list-title--font-size: $font-size__base;
+$_workflowactions__list-title--color: inherit;
+$_workflowactions__list-info-container--padding-top: 5px;
+$_workflowactions__list-info-label--padding-x: 5px;
+$_workflowactions__list-bottom--padding: $container-spacing-default__third 0 0;
+$_workflowactions__list-text-button--color: $_workflowactions__hyperlink--hover-color;
+
+
+$_workflowactions__menu-popup--margin-top: 2px;
+$_workflowactions__menu-popup-before--right: 0px;
+$_workflowactions__menu-popup-before--top: 10px;
+$_workflowactions__menu-popup-before--border-width: 8px 10px;
+$_workflowactions__menu-popup-before--border-color: $white;
+$_workflowactions__menu-popup-before--border-colors: $_workflowactions__menu-popup-before--border-color $_workflowactions__menu-popup-before--border-color transparent transparent;
+$_workflowactions__menu-popup-before--box-shadow: 0 0 1px $black;

@@ -1,0 +1,2 @@
+UPDATE SyncAttributeDescriptorConfig[batchMode=true];attributeDescriptor(enclosingType(code),qualifier)[unique=true];includedInSync
+;AbstractRestriction:pages;false

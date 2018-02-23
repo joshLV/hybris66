@@ -1,0 +1,100 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+"# (""Confidential Information""). You shall not disclose such Confidential"
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+$lang=es_CO
+
+############################# CONDITIONS ##########################
+
+INSERT_UPDATE RuleConditionDefinitionCategory;id[unique=true];name[lang=$lang]
+;cart;Carro
+;customer;Cliente
+
+INSERT_UPDATE RuleConditionDefinition;id[unique=true];name[lang=$lang];breadcrumb[lang=$lang]
+;y_cart_total;Total del carro;Total de carro {operador} {valor}
+;y_qualifying_products;Productos sujetos a promoción;Carro {productos_operatdor} productos {productos}
+;y_qualifying_categories;Categorías de calificación;Carro {categories_operator} categorías {categorías}
+;y_target_customers;Clientes destino;Gruposde clientes {customer_groups} destino {customer_groups_operator} o clientes {customers}
+;y_product_price;Valor umbral de precio de producto;Precio de producto {operator} {value}
+;y_customer_support;Asistencia al cliente;La sesión de servicio asistido está activa: {value}
+;y_qualifying_group_types;Tipos de grupo de calificación;Grupo de entrada de carro {operator} {groupTypes}
+
+INSERT_UPDATE RuleConditionDefinitionParameter;definition(id)[unique=true];id[unique=true];name[lang=$lang];description[lang=$lang]
+;y_cart_total;operator;Operador;Operador para comparar el valor total del carro
+;y_cart_total;value;Valor total de carro;Mapa de moneda y valor del total de carro que se utilizará
+;y_qualifying_products;operator;Operador;Operador para comparar la cantidad necesaria para productos sujetos a promoción
+;y_qualifying_products;quantity;Cantidad;Cantidad de productos sujetos a promoción requeridos (por entrada de orden)
+;y_qualifying_products;products_operator;Operador de selección de productos;Seleccione CUALQUIER producto o seleccione TODOS los productos de la lista de productos sujetos a promoción
+;y_qualifying_products;products;Productos;Lista de productos sujetos a promoción
+;y_qualifying_products;catalog_version;Versión del catálogo;Versión de catálogo
+;y_qualifying_categories;operator;Operador;Operador para comparar la cantidad necesaria para productos en categorías de calificación
+;y_qualifying_categories;quantity;Cantidad;Cantidad de productos requeridos de categorías de calificación (por entrada de orden)
+;y_qualifying_categories;categories_operator;Operador de seleccion de categoría;Seleccione CUALQUIER categoría o seleccione TODAS las categorías de la lista de categorias de calificación
+;y_qualifying_categories;categories;Categorías;Lista de categorías de calificación
+;y_qualifying_categories;excluded_categories;Categorías excluidas;Lista de subcategorías que se deben excluir de las categorías de calificación
+;y_qualifying_categories;excluded_products;Productos excluidos;Lista de productos de categorías de calificación que se deben excluir
+;y_target_customers;customer_groups_operator;Operador de selección de grupo de clientes;El cliente debe ser parte de CUALQUIER grupo de clientes o de TODOS
+;y_target_customers;customer_groups;Grupos de clientes;Lista de grupos de clientes de calificación
+;y_target_customers;customers;Clientes;Lista de categorías de calificación
+;y_target_customers;excluded_customer_groups;Grupos de clientes excluidos;Lista de subgrupos que se deben excluri de los grupos de clientes de calificación
+;y_target_customers;excluded_customers;Clientes excludos;Lista de clientes que se deben excluri de los grupos de clientes de calificación
+;y_product_price;operator;Operador;Operador para comparar el valor de producto
+;y_product_price;value;Valor umbral de precio;Mapa de valor umbral y moneda de los productos que se deben utilizar para calificar para esta promoción
+;y_customer_support;value;Sesión de servicio asistido activa;Habilite la promocion basada en si el agente de asistencia al cliente está asistiendo al cliente en la tienda online o no.
+;y_qualifying_group_types;operator;Operador;Operaodr de seleccion de tipo de grupo
+;y_qualifying_group_types;groupTypes;Tipos de grupo;Lista de tipos de grupo de calificación
+
+############################# ACTIONS ##########################
+
+INSERT_UPDATE RuleActionDefinitionCategory;id[unique=true];name[lang=$lang]
+;cart_discounts;Descuentos de carro
+;product_discounts;Descuentos de producto
+;partner_product_discounts;Descuentos de producto de interlocutor
+;shipping;Envío
+
+INSERT_UPDATE RuleActionDefinition;id[unique=true];name[lang=$lang];breadcrumb[lang=$lang];
+;y_order_percentage_discount;Descuento de porcentaje en carro;;
+;y_order_fixed_discount;;;
+;y_order_entry_percentage_discount;;;
+;y_order_entry_fixed_discount;;;
+;y_order_entry_fixed_price;;;
+;y_target_bundle_price;;;
+;y_free_gift;;;
+;y_partner_order_entry_percentage_discount;;;
+;y_partner_order_entry_fixed_discount;;;
+;y_partner_order_entry_fixed_price;;;
+;y_change_delivery_mode;;;
+;y_trigger_message;;;
+
+INSERT_UPDATE RuleActionDefinitionParameter;definition(id)[unique=true];id[unique=true];name[lang=$lang];description[lang=$lang]
+;y_order_percentage_discount;value;;
+;y_order_fixed_discount;value;;
+;y_order_entry_percentage_discount;value;;
+;y_order_entry_fixed_discount;value;;
+;y_order_entry_fixed_price;value;;
+;y_target_bundle_price;value;;
+;y_target_bundle_price;selection_strategy;;
+;y_target_bundle_price;qualifying_containers;;
+;y_free_gift;product;;
+;y_free_gift;quantity;Cantidad;
+;y_free_gift;catalog_version;Versión del catálogo;Versión de catálogo
+;y_partner_order_entry_percentage_discount;value;;
+;y_partner_order_entry_percentage_discount;selection_strategy;;
+;y_partner_order_entry_percentage_discount;qualifying_containers;;
+;y_partner_order_entry_percentage_discount;target_containers;;
+;y_partner_order_entry_fixed_discount;value;;
+;y_partner_order_entry_fixed_discount;selection_strategy;;
+;y_partner_order_entry_fixed_discount;qualifying_containers;;
+;y_partner_order_entry_fixed_discount;target_containers;;
+;y_partner_order_entry_fixed_price;value;;
+;y_partner_order_entry_fixed_price;selection_strategy;;
+;y_partner_order_entry_fixed_price;qualifying_containers;;
+;y_partner_order_entry_fixed_price;target_containers;;
+;y_change_delivery_mode;delivery_mode;Modo de entrega;

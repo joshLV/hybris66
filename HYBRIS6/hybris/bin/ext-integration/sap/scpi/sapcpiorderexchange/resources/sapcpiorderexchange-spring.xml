@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <import resource="classpath:/sapcpiorderexchange-scpi-spring.xml" />
+
+    <alias name="sapCpiOrderConversionDefaultService" alias="sapCpiOrderConversionService" />
+    <bean id="sapCpiOrderConversionDefaultService" class="de.hybris.platform.sap.sapcpiorderexchange.service.impl.SapCpiOrderConversionDefaultService">
+        <property name="sapOrderContributor" ref="sapOrderContributor" />
+        <property name="sapOrderEntryContributor" ref="sapOrderEntryContributor" />
+        <property name="sapPaymentContributor" ref="sapPaymentContributor" />
+        <property name="sapPartnerContributor" ref="sapPartnerContributor" />
+        <property name="sapSalesConditionsContributor" ref="sapSalesConditionsContributor" />
+        <property name="sapPlantLogSysOrgService" ref="sapPlantLogSysOrgService" />
+    </bean>
+
+    <alias name="sapCpiOutboundOrderService" alias="sapOrderexchangeSendOrderToDataHubHelper" />
+    <bean id="sapCpiOutboundOrderService" class="de.hybris.platform.sap.sapcpiorderexchange.outbound.impl.SapCpiOutboundOrderService"
+          parent="sapOmsSendOrderToDataHubHelper">
+        <property name="sapCpiOrderService" ref="sapCpiOrderService" />
+        <property name="sapCpiOrderConversionService" ref="sapCpiOrderConversionService" />
+    </bean>
+
+    <!-- Default Generated Beans -->
+    <bean id="sapcpiorderexchangeSystemSetup" class="de.hybris.platform.sap.sapcpiorderexchange.setup.SapcpiorderexchangeSystemSetup">
+        <constructor-arg ref="sapcpiorderexchangeService"/>
+    </bean>
+
+    <bean id="sapcpiorderexchangeService" class="de.hybris.platform.sap.sapcpiorderexchange.service.impl.DefaultSapcpiorderexchangeService">
+        <property name="modelService" ref="modelService"/>
+        <property name="mediaService" ref="mediaService"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+			
+</beans>

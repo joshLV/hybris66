@@ -1,0 +1,11 @@
+#Ant properties
+#Tue Nov 14 06:21:33 UTC 2017
+builddate=20171114 0621
+description=entitlementservices
+group.id=de.hybris.platform
+module.name=platform-module
+name=entitlementservices
+releasedate=20171106 1119
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

@@ -1,0 +1,1 @@
+angular.module("personalizationsearchsmartedit",["featureServiceModule","perspectiveServiceModule","decoratorServiceModule"]).run(function(){});

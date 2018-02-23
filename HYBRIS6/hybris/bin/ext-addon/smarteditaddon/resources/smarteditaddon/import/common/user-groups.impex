@@ -1,0 +1,25 @@
+$defaultPassword=1234
+
+# Impexing previewmanagergroup as previewwebservices might not be impexed by the time this file is executed and the user impex uploads might fail
+INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)[mode=append]
+;previewmanagergroup;employeegroup
+
+INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)[mode=append]
+;apparel-de-cmsmanagergroup;employeegroup
+;apparel-uk-cmsmanagergroup;employeegroup
+;base-electronics-cmsmanagergroup;basecmsmanagergroup
+;electronics-cmsmanagergroup;base-electronics-cmsmanagergroup
+;powertools-cmsmanagergroup;employeegroup
+
+
+INSERT_UPDATE PrincipalGroupRelation;source(uid)[unique=true];target(uid)[unique=true]
+;apparel-de-cmsmanagergroup;basecmsmanagergroup;
+;apparel-uk-cmsmanagergroup;basecmsmanagergroup;
+;electronics-cmsmanagergroup;base-electronics-cmsmanagergroup;
+;powertools-cmsmanagergroup;basecmsmanagergroup;
+
+INSERT_UPDATE Employee;UID[unique=true];password[default=$defaultPassword];groups(uid)[mode=append];sessionLanguage(isocode)
+;cmsmanager-apparel-de;;apparel-de-cmsmanagergroup,previewmanagergroup;en
+;cmsmanager-apparel-uk;;apparel-uk-cmsmanagergroup,previewmanagergroup;en
+;cmsmanager-electronics;;electronics-cmsmanagergroup,previewmanagergroup;en
+;cmsmanager-powertools;;powertools-cmsmanagergroup,previewmanagergroup;en

@@ -1,0 +1,17 @@
+//Details
+.sync-attribute-config-details {
+    padding:$_selsync__details--padding;
+
+    > .z-label {
+        font-weight: $_selsync__details-label--font-weight;
+        color: $_selsync__details-label--color;
+        margin-bottom: $_selsync__details-label--margin-bottom;
+        display: inline-block;
+    }
+    &-item {
+        span.ye-switch-checkbox.z-checkbox {
+            min-height: $_selsync__details-checkbox--min-height;
+            line-height: $_selsync__details-checkbox--line-height;
+        }
+    }
+}

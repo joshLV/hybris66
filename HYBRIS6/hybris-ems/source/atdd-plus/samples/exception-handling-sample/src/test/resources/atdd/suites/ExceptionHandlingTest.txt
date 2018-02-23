@@ -1,0 +1,37 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+
+*** Settings ***
+
+Library    com.hybris.atdd.exceptionhandling.keywords.SampleKeywordLibrary
+
+*** Variables ***
+${expectedType}=    NotImplementedException
+${expectedMessage}=    This keyword has not been implemented yet.
+	
+*** Test Cases ***
+
+testExceptionHandling
+	[Documentation]    Tests built in exception handling
+	
+	Run Keyword And Expect Error    IllegalArgumentException: Parameter name may not be null
+	...    say hello to    ${EMPTY}
+	Run Keyword And Expect Error    IllegalArgumentException*
+	...    say hello to    ${EMPTY}
+	Run Keyword And Expect Error    *Parameter name may not be null
+	...    say hello to    ${EMPTY}
+	
+	Run Keyword And Expect Error    NotImplementedException: This keyword has not been implemented yet.
+	...    not implemented keyword
+	Run Keyword And Expect Error    *
+	...    not implemented keyword
+	Run Keyword And Expect Error    ${expectedType}: ${expectedMessage}
+	...    not implemented keyword

@@ -1,0 +1,69 @@
+//Filter
+.ye-selsync-attribute-config-filter {
+    padding: $_selsync__filter--padding;
+    margin: $_selsync__tree-filter--margin;
+
+    &-popup {
+        width: $_selsync__filter-popup--width;
+        margin-top: $_selsync__filter-popup--margin-top;
+        margin-left: $_selsync__filter-popup--margin-left;
+        padding: 0;
+    }
+
+    &-popup-item {
+        border-top: $_selsync__filter-popup-item--border-top;
+        padding: $_selsync__filter-popup-item--padding;
+
+        &:first-child {
+            border-top-width: 0;
+        }
+
+        > span,
+        > div {
+            margin: $_selsync__filter-popup-item-content--margin;
+        }
+
+        .ye-switch-checkbox.z-checkbox {
+            min-height: $_selsync__details-checkbox--min-height;
+            line-height: $_selsync__details-checkbox--line-height;
+        }
+    }
+
+    &-search {
+        width: $_selsync__filter-search--width;
+        margin-right: $_selsync__filter-search--margin-right;
+    }
+
+
+    &-button {
+        width: $_selsync__filter-popup-button--size;
+        height: $_selsync__filter-popup-button--size;
+        background-color: $_selsync__filter-popup-button--bg-color;
+        border: $_selsync__filter-popup-button--border;
+        background-image: $_selsync__filter-popup-button--bg-image;
+        background-size: $_selsync__filter-popup-button--bg-size;
+        background-position: $_selsync__filter-popup-button--bg-position;
+        background-repeat: no-repeat;
+        text-indent: $_selsync__filter-popup-button--text-indent;
+        white-space: $_selsync__filter-popup-button--white-space;
+
+        &:hover,
+        &:active,
+        &:focus{
+            background-color: $_selsync__filter-popup-button-hover-focus--bg-color;
+            background-size: $_selsync__filter-popup-button-hover-focus--bg-size;
+            background-position: $_selsync__filter-popup-button-hover-focus--bg-position;
+            box-shadow: none;
+            background-repeat: no-repeat;
+        }
+        &:hover {
+            border: $_selsync__filter-popup-button-hover--border;
+            background-image: $_selsync__filter-popup-button-hover--bg-image;
+        }
+        &:active,
+        &:focus {
+            border: $_selsync__filter-popup-button-focus--border;
+            background-image: $_selsync__filter-popup-button-focus--bg-image;
+        }
+    }
+}

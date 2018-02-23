@@ -1,0 +1,11 @@
+.binding-btn{
+	padding-top: 15px;
+}
+
+.input_hidden {
+	display: none;
+}
+
+.consent-mobile-binding label{
+	font-weight: normal;
+}

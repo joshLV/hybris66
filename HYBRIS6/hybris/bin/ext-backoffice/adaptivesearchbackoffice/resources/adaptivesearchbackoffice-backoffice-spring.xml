@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd" >
+
+	<bean id="adaptivesearchbackofficeLabelLocator" class="com.hybris.cockpitng.util.labels.ResourcesLabelLocator"
+		scope="singleton" init-method="init" lazy-init="false">
+		<property name="location" value="/adaptivesearchbackoffice-backoffice-labels/" />
+		<property name="name" value="labels" />
+	</bean>
+	
+	<!-- Facades -->
+
+	<alias name="defaultAsCategoryFacade" alias="asCategoryFacade" />
+	<bean id="defaultAsCategoryFacade" class="de.hybris.platform.adaptivesearchbackoffice.facades.impl.DefaultAsCategoryFacade">
+		<property name="catalogVersionService" ref="catalogVersionService" />
+		<property name="categoryService" ref="categoryService" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileContextFacade" alias="asSearchProfileContextFacade" />
+	<bean id="defaultAsSearchProfileContextFacade" class="de.hybris.platform.adaptivesearchbackoffice.facades.impl.DefaultAsSearchProfileContextFacade">
+		<property name="searchProfileContextFactory" ref="asSearchProfileContextFactory" />
+		<property name="catalogVersionService" ref="catalogVersionService" />
+		<property name="categoryService" ref="categoryService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+	</bean>
+	
+	<alias name="defaultAsSearchConfigurationFacade" alias="asSearchConfigurationFacade" />
+	<bean id="defaultAsSearchConfigurationFacade" class="de.hybris.platform.adaptivesearchbackoffice.facades.impl.DefaultAsSearchConfigurationFacade">
+		<property name="asSearchProfileContextFacade" ref="asSearchProfileContextFacade" />
+		<property name="asSearchProfileService" ref="asSearchProfileService" />
+		<property name="asSearchConfigurationService" ref="asSearchConfigurationService" />
+		<property name="catalogVersionService" ref="catalogVersionService" />
+	</bean>
+
+    <!-- Data providers -->
+    <alias name="defaultAsFacetIndexPropertyDataProvider" alias="asFacetIndexPropertyDataProvider"/>
+    <bean id="defaultAsFacetIndexPropertyDataProvider" class="de.hybris.platform.adaptivesearchbackoffice.common.impl.AsFacetIndexPropertyDataProvider">
+        <property name="asSearchProviderFactory" ref="asSearchProviderFactory"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+	<alias name="defaultAsIndexTypeDataProvider" alias="asIndexTypeDataProvider" />
+	<bean id="defaultAsIndexTypeDataProvider" class="de.hybris.platform.adaptivesearchbackoffice.common.impl.AsIndexTypeDataProvider">
+		<property name="asSearchProviderFactory" ref="asSearchProviderFactory" />
+	</bean>
+
+	<alias name="defaultAsIndexPropertyDataProvider" alias="asIndexPropertyDataProvider" />
+	<bean id="defaultAsIndexPropertyDataProvider" class="de.hybris.platform.adaptivesearchbackoffice.common.impl.AsIndexPropertyDataProvider">
+		<property name="asSearchProviderFactory" ref="asSearchProviderFactory" />
+	</bean>
+	
+	<alias name="defaultAsBoostOperatorDataProvider" alias="asBoostOperatorDataProvider" />
+	<bean id="defaultAsBoostOperatorDataProvider" class="de.hybris.platform.adaptivesearchbackoffice.common.impl.AsBoostOperatorDataProvider">
+		<property name="labelService" ref="labelService" />
+		<property name="asSearchProviderFactory" ref="asSearchProviderFactory" />
+	</bean>
+
+	<alias name="defaultAsPromotedFacetsDataHandler" alias="asPromotedFacetsDataHandler" />
+	<bean id="defaultAsPromotedFacetsDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.promotedfacets.AsPromotedFacetsDataHandler"
+		scope="prototype" />
+
+	<alias name="defaultAsFacetsDataHandler" alias="asFacetsDataHandler" />
+	<bean id="defaultAsFacetsDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.facets.AsFacetsDataHandler"
+		scope="prototype" />
+
+	<alias name="defaultAsExcludedFacetsDataHandler" alias="asExcludedFacetsDataHandler" />
+	<bean id="defaultAsExcludedFacetsDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.excludedfacets.AsExcludedFacetsDataHandler"
+		scope="prototype" />
+
+	<alias name="defaultAsBoostRulesDataHandler" alias="asBoostRulesDataHandler" />
+	<bean id="defaultAsBoostRulesDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.boostrules.AsBoostRulesDataHandler"
+		scope="prototype" />
+
+	<alias name="defaultAsPromotedItemsDataHandler" alias="asPromotedItemsDataHandler" />
+	<bean id="defaultAsPromotedItemsDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.promoteditems.AsPromotedItemsDataHandler"
+		scope="prototype">
+		<property name="labelService" ref="labelService" />
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+	<alias name="defaultAsExcludedItemsDataHandler" alias="asExcludedItemsDataHandler" />
+	<bean id="defaultAsExcludedItemsDataHandler" class="de.hybris.platform.adaptivesearchbackoffice.editors.excludeditems.AsExcludedItemsDataHandler"
+		scope="prototype">
+		<property name="labelService" ref="labelService" />
+		<property name="modelService" ref="modelService" />
+	</bean>
+	
+	<!-- Other beans -->
+	
+	<alias name="defaultAsFacetUtils" alias="asFacetUtils" />
+	<bean id="defaultAsFacetUtils" class="de.hybris.platform.adaptivesearchbackoffice.common.impl.DefaultAsFacetUtils"
+		scope="prototype">
+		<property name="sessionService" ref="sessionService" />
+		<property name="commonI18NService" ref="commonI18NService" />
+		<property name="asSearchProviderFactory" ref="asSearchProviderFactory" />
+	</bean>
+
+</beans>

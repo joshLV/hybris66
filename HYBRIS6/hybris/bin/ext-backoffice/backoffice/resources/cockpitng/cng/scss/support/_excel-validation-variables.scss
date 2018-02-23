@@ -1,0 +1,36 @@
+@import 'cockpitng-globals.scss';
+@import 'excel-variables.scss';
+$_excel-validation__result-container--border-width: $boxes--border__thin;
+$_excel-validation__configurable-flow-result-container--margin: $_excel-popups__configurable-flow-container--margin;
+$_excel-validation__result-list--border-color: $grey__light--800;
+$_excel-validation__result-list-item--padding-x: $container-spacing-default_two-thirds;
+$_excel-validation__result-subtitle--font-weight: $font-weight-bold;
+$_excel-validation__result-subtitle--color: $validation__error--color;
+$_excel-validation__result-subtitle--font-size: $font-size__medium;
+$_excel-validation__result-subtitle-icon--size: 16px;
+$_excel-validation__result-subtitle-icon--background: url("images/icon_validation_sprite.png") -32px 0 no-repeat;
+$_excel-validation__result-subtitle-icon--right: $_excel-validation__result-list-item--padding-x + 4px;
+$_excel-validation__result-subtitle-container--padding: $container-spacing-default__half ($_excel-validation__result-list-item--padding-x + $_excel-validation__result-subtitle-icon--size) $container-spacing-default__half $_excel-validation__result-list-item--padding-x;
+
+$_excel-validation__toggle-icon--size: 16px;
+$_excel-validation__toggle-icon--margin-top: ceil($_excel-validation__toggle-icon--size/2) * -1;
+$_excel-validation__toggle-icon--font-size: $font-size__h3;
+$_excel-validation__toggle-icon--line-height: $_excel-validation__toggle-icon--font-size;
+$_excel-validation__toggle-icon--margin-right: 2px;
+$_excel-validation__toggle-icon--color: $blue__default--600;
+$_excel-validation__toggle-icon--font: $font-family-fontawesome;
+$_excel-validation__toggle-icon--content: $anglearrow__down--content;
+$_excel-validation__toggle-expanded-icon-content: $anglearrow__up--content;
+
+$_excel-validation__result-list-item--border: $_excel-validation__result-container--border-width solid  $grey__light--800;
+$_excel-validation__result-list-table--mergin-bottom: $_excel-validation__result-container--border-width * -1;
+
+$_excel-validation__result-list-details-header--font-weight: $_excel-validation__result-subtitle--font-weight;
+$_excel-validation__result-list-details-header--color:$_excel-validation__result-subtitle--color;
+$_excel-validation__result-list-details-cell--margin-top: $container-spacing-default__half;
+$_excel-validation__result-list-details--padding-top: 5px;
+$_excel-validation__result-list-details--font-size: $font-size__small;
+$_excel-validation__result-list-title--font-size: $font-size__base;
+$_excel-validation__result-list-title--font-weight: $font-weight-bold;
+$_excel-validation__result-list-subtitle--font-size: $font-size__small;
+$_excel-validation__result-list-header--padding-right: $_excel-validation__toggle-icon--size + $_excel-validation__toggle-icon--margin-right;

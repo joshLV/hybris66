@@ -1,0 +1,2 @@
+INSERT_UPDATE Customer ; uid[unique=true]                         ; name[default=testName]              
+                       ; r01_00_020_global_lang_[$global_$lang]  

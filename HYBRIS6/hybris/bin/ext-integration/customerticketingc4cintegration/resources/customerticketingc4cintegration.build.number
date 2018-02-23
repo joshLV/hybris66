@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Nov 16 09:41:37 UTC 2017
+builddate=20171116 0941
+description=customerticketingc4cintegration
+group.id=de.hybris.platform
+module.name=platform-module
+name=customerticketingc4cintegration
+releasedate=20171031 1329
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

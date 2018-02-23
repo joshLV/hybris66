@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Nov 16 06:26:32 UTC 2017
+builddate=20171116 0626
+description=eventpublisher
+group.id=de.hybris.platform
+module.name=platform-module
+name=eventpublisher
+releasedate=20170725 1653
+vendor=hybris
+version=6.5.0.0
+version.api=6.5.0

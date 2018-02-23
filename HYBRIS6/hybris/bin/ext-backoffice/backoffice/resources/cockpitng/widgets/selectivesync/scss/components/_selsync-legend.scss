@@ -1,0 +1,87 @@
+//Legend
+.ye-selsync-legend {
+    &-item {
+        // margin-top: $_selsync__legend-item--margin-top;
+        padding-right: $_selsync__legend-item--padding-right;
+        display: block;
+        float: left;
+        max-width: 25%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @media all and (max-width: $_selsync__content-bp-s--width){
+            max-width: 50%;
+            padding-right: $_selsync__legend-item-bp-s--padding-right;
+            display: inline-block;
+            float: none;
+        }
+
+        .z-checkbox {
+            padding-left: $_selsync__legend-checkbox--padding-left;
+
+            input,
+            input[disabled] {
+                + label:before {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            &.ye-selsync-all-selected {
+                input,
+                input[disabled] {
+                    + label:before {
+                        background-color: $_selsync__legend-checkbox-selected--bg-color;
+                        border-color: $_selsync__legend-checkbox-selected--border-color;
+                    }
+                }
+            }
+            &.ye-selsync-partially-selected {
+                input,
+                input[disabled] {
+                    + label:before {
+                        background-color: $_selsync__tree-checkbox-grey--bg-color;
+                        background-image: $_selsync__tree-checkbox-grey--bg-image;
+                        background-size: $_selsync__tree-checkbox--bg-size;
+                        border-color: $_selsync__tree-checkbox-grey--border-color;
+                    }
+                }
+            }
+            &.ye-selsync-none-selected {
+                input,
+                input[disabled] {
+                    + label:before {
+                        background-color: $_selsync__tree-checkbox-red--bg-color;
+                        background-image: $_selsync__tree-checkbox-red--bg-image;
+                        background-size: $_selsync__tree-checkbox--bg-size;
+                        border-color: $_selsync__tree-checkbox-red--border-color;
+                    }
+                }
+            }
+        }
+
+        .ye-selsync-legend-item-label {
+            margin-left: $_selsync__legend-item-label--margin-left;
+            line-height: $_selsync__legend-item--line-height;
+        }
+
+        .ye-selsync-tree-attribute-icon {
+            width: $_selsync__tree-icon-attribute--size;
+            height: $_selsync__tree-icon-attribute--size;
+            background: $_selsync__tree-icon-attribute--background;
+            position: relative;
+            float: left;
+            display: inline-block;
+        }
+
+        .ye-selsync-tree-attribute-label {
+            font-size: $_selsync__tree-label--font-size;
+            margin-bottom: $_selsync__tree-label--margin-bottom;
+            line-height: $_selsync__tree-label--line-height;
+            max-width: $_selsync__tree-label--max-width;
+            text-overflow: $_selsync__tree-label--text-overflow;
+            overflow: $_selsync__tree-label--overflow;
+            display: $_selsync__tree-label--display;
+            color: $_selsync__tree-label--color;
+        }
+    }
+}

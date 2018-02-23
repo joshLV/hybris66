@@ -1,0 +1,11 @@
+#Ant properties
+#Fri Nov 10 19:43:01 UTC 2017
+builddate=20171110 1942
+description=b2badmincockpit
+group.id=de.hybris.platform
+module.name=platform-module
+name=b2badmincockpit
+releasedate=20171110 1320
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 29 19:20:22 UTC 2017
+builddate=20171129 1920
+description=commerceservicesatddtests
+group.id=de.hybris.platform
+module.name=platform-module
+name=commerceservicesatddtests
+releasedate=20171122 1230
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

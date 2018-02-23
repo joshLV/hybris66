@@ -1,0 +1,11 @@
+{  
+   "name":"hmc",
+   "version":"6.6.0.0",
+   "dependencies":{  
+      "utf8-base64":"1.0.0",
+      "scriptaculous":"1.7.1",
+      "prototype":"1.7.3",
+      "behaviour":"1.1.0",
+      "yui-ext":"0.40.0"
+   }
+}

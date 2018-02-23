@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 06 12:58:16 UTC 2017
+builddate=20171106 1258
+description=commercesearchhmc
+group.id=de.hybris.platform
+module.name=platform-module
+name=commercesearchhmc
+releasedate=20171106 1119
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

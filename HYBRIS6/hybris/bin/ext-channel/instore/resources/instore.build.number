@@ -1,0 +1,11 @@
+#Ant properties
+#Sat Nov 11 03:05:25 UTC 2017
+builddate=20171111 0305
+description=instore
+group.id=de.hybris.platform
+module.name=platform-module
+name=instore
+releasedate=20170926 0534
+vendor=hybris
+version=6.5.0.0
+version.api=6.5.0

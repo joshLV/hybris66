@@ -1,0 +1,486 @@
+@se-slot-ctx-menu__btn__sync--font-size: 25px;
+@se-slot-ctx-menu__btn__caution--before--padding-bottom: 3px;
+@shared-slot-button-template__menu--width: 375px;
+@slot-visiblity-component-template__icon__image--max-width: 74px;
+@slot-visiblity-component-template--padding: 10px 0 10px 30px;
+@slot-visiblity-component-template__icon--padding: 13px;
+@slot-visiblity-component-template__icon--width: 100px;
+
+.se-slot-contextual-menu-level1,
+.se-slot-contextual-menu-level2{
+    overflow: visible;
+}
+
+.se-slot-contextual-menu-level2{
+    display: flex;
+    flex-direction: column;
+}
+
+.decorative-panel-area {
+    height: 42px;
+    margin-top: -42px;
+    width: auto;
+    border: 2px solid @smartedit-blue;
+    border-bottom: 0;
+    background: @smartedit-blue2 repeat;
+    display:flex;
+    align-items:center;
+}
+
+.decorative-panel-text {
+    padding: 0 10px;
+    font-size: 17px;
+    font-weight: @font-weight--book;
+    font-family: @font-open-sans;
+    color: @smartedit-white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.decorator-panel-padding-center {
+    flex-grow: 1;
+}
+
+.decorative-panel-slot-contextual-menu {
+    display: flex;
+    right: 0px;
+    top: -42px;
+    &.editMode{
+        width: 100%;
+        height: 100%;
+    }
+}
+.se-slot-ctx-menu__divider::before{
+    background-color: @smartedit-white;
+    display: block;
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    opacity: .35;
+    top:10px;
+    left: -2px;
+}
+.decorative-panel-basic-slot-contextual-menu {
+    position: static;
+    margin-top: -42px;
+}
+
+.decorative-panel-slot-contextual-menu .dropdown {
+    position: relative;
+}
+
+.decorator-padding-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.decorator-slot-border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px dashed @smartedit-grey15;
+    &.active {
+        border: 2px solid @smartedit-blue;
+    }
+}
+
+.decorator-basic-slot-border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px dashed @smartedit-grey15;
+}
+
+.decorator-padding-left,
+.decorator-padding-right {
+    background-image: url('../../../images/slot_background_v2.png');
+    flex-grow: 1;
+    display: none;
+    box-shadow: inset 0 0 0 2px @smartedit-blue;
+}
+
+.decorator-padding-right.active {
+    display: flex;
+}
+
+.cmsx-ctx-btns{
+    display: inline-block;
+}
+
+/********************************************************
+                Shared Slot Menu
+*********************************************************/
+@shared-slot__padding-left-right: 30px;
+@shared-slot__padding-top-bottom: 20px;
+@shared-slot__padding-spacing: 15px;
+
+.shared-slot__dropdown {
+    position: absolute;
+    z-index: @z-index-level-3;
+    background-color: @smartedit-white;
+    width: 350px;
+    padding: .4*@smartedit-gutter .6*@smartedit-gutter;
+    right: -3px;
+    color: @smartedit-black;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    margin-top: 0;
+    margin-right: -3px;
+    border: none;
+    box-shadow: 0 8px 12px fade(@smartedit-black, 17.5%);
+    padding: 0;
+    border-radius: 0;
+}
+
+.shared-slot__description {
+    font-family: @font-open-sans;
+    height: inherit;
+    white-space: normal;
+    margin: 0;
+}
+
+.shared-slot__header {
+    padding: @shared-slot__padding-top-bottom @shared-slot__padding-left-right;
+    font-size: 18px;
+    font-weight: @font-weight--semibold;
+    color: @smartedit-darkblue2;
+}
+
+.shared-slot__divider {
+    height: 1px;
+    overflow: hidden;
+    background-color: @smartedit-grey22;
+}
+
+.shared-slot__description {
+    padding: @shared-slot__padding-spacing @shared-slot__padding-left-right;
+}
+
+.shared-slot__body {
+    padding: @shared-slot__padding-spacing @shared-slot__padding-left-right @shared-slot__padding-top-bottom;
+}
+
+.shared-slot__sub-header {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.shared-slot__link {
+    color: @smartedit-blue;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.shared-slot-button-template__btn:active,
+.shared-slot-button-template__btn:hover,
+.shared-slot-button-template__btn:hover:active,
+.shared-slot-button-template__btn:focus,
+.shared-slot-button-template__btn:focus:active {
+    background-color: transparent;
+}
+
+.shared-slot-button-template__btn {
+    background-color: transparent;
+    border: 0;
+    height: 44px;
+    width: 62px;
+    padding: 0;
+    font-family: @font-open-sans;
+    font-size: 14px;
+    font-weight: @font-weight--semibold;
+    margin-left: 2px;
+    margin-right: -2px;
+}
+
+.se-slot-ctx-menu__icon-shared{
+    font-size: 11px;
+}
+
+.se-slot-ctx-menu__icon-unshared{
+    font-size: 20px;    
+    &:before {
+        padding-top: 3px;
+    }
+}
+
+.se-slot-ctx-menu__icon-shared,
+.se-slot-ctx-menu__icon-unshared{
+    vertical-align: top;
+    &:before {
+        vertical-align: initial;
+    }
+}
+
+.shared-slot-button-template__btn .popoverAnchor{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shared-slot-button-template__btn.ySESharedSlotOpen:active,
+.shared-slot-button-template__btn.ySESharedSlotOpen:focus,
+.shared-slot-button-template__btn.ySESharedSlotOpen:focus:active,
+.shared-slot-button-template__btn.ySESharedSlotOpen:hover:active,
+.ySESharedSlotOpen:hover,
+.ySESharedSlotOpen{
+    background-color: @smartedit-white;
+    color: @smartedit-blue4;
+    border: none;
+}
+
+/********************************************************
+                SLOT VISIBILITY
+*********************************************************/
+
+.slot-visibility-button-template__menu{
+    z-index: @z-index-level-3;
+    width: 520px;
+    margin: 0 0 0 -1px;
+    padding-top: 0;
+    box-shadow: 0 8px 12px fade(@smartedit-black, 17.5%);
+    border-radius: 0;
+    border: none;
+    padding-bottom: 0;
+}
+
+.slot-visibility-button-template__menu__title{
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: @font-weight--semibold;
+    color: @smartedit-darkblue2;
+}
+
+.slot-visibility-component {
+    margin-top: 0;
+}
+
+.slot-visibility-component--wrapper {
+    border-top: 1px solid @smartedit-grey13;
+    display: flex;
+    align-items: center;
+}
+
+.slot-visiblity-component-template{
+    padding: @slot-visiblity-component-template--padding;
+    vertical-align: middle;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.slot-visibility-component--wrapper__external {
+    background-color: @smartedit-grey39;
+    .slot-visiblity-component-template__text {
+        color: @smartedit-grey35;
+    }
+    .slot-visiblity-component-template__icon {
+        background-color: @smartedit-grey16;
+    }
+}
+
+.slot-visiblity-component-template__icon{
+    vertical-align: middle;
+    float: left;
+    width: @slot-visiblity-component-template__icon--width;
+    background-color: @smartedit-blue;
+    padding: @slot-visiblity-component-template__icon--padding;
+}
+
+.slot-visiblity-component-template__text-wrapper{
+    width: calc(~"100% - 100px");
+    padding-left: .4*@smartedit-gutter;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.slot-visiblity-component-template__icon__image{
+    max-width: @slot-visiblity-component-template__icon__image--max-width;
+}
+
+.slot-visiblity-component-template__text{
+    font-family: @font-open-sans;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: 0;
+}
+.slot-visiblity-component-template__text__name{
+    font-weight: @font-weight--bold;
+    color: @smartedit-blue;
+}
+
+.slot-visiblity-component-template__text__type{
+    font-weight: @font-weight--normal;
+    color: @smartedit-grey7;
+    text-transform: uppercase;
+}
+
+.slot-visiblity-component-template__text__visibility{
+    font-weight: @font-weight--normal;
+    color: @smartedit-grey7;
+}
+
+.slot-visiblity-component--globe-icon {
+    font-size: 20px;
+    padding-left: 15px;
+    color: @smartedit-grey40;
+}
+
+.slot-visiblity-component--hidden-menu {
+    display: block;
+    margin-left: 15px;
+}
+
+.slot-visibility-button-template__btn{
+    width: 62px;
+    height: 44px;
+    padding: 0;
+    font-family: @font-open-sans;
+    font-size: 14px;
+    font-weight: @font-weight--semibold;
+    color: @smartedit-white;
+    padding-left: 2px;
+}
+
+.slot-visibility-button-template__btn__img{
+    height: 26px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.yWrapperData .slot-visibility-button-template__btn__img {
+    margin-top: -2px;
+}
+
+.slot-visibility-button-template__btn,
+.slot-visibility-button-template__btn:hover,
+.slot-visibility-button-template__btn:active,
+.slot-visibility-button-template__btn:focus,
+.slot-visibility-button-template__btn:hover:active,
+.slot-visibility-button-template__btn:focus:active{
+    background-color: transparent;
+    border: none;
+}
+
+.slot-visibility-button-template__btn-group .ySEVisibilityOpen,
+.slot-visibility-button-template__btn-group .ySEVisibilityOpen:hover:active,
+.slot-visibility-button-template__btn-group .ySEVisibilityOpen:focus:active,
+.shared-slot-button-template__btn-group .ySESharedSlotOpen{
+    background-color: @smartedit-white;
+    border: none;
+    color: @smartedit-blue4;
+}
+
+.slot-visibility-button-template__btn-group .ySEVisibilityOpen img.slot-visibility-button-template__btn__img,
+.slot-visibility-button-template__btn-group img.slot-visibility-button-template__btn__img,
+.shared-slot-button-template__btn-group .ySESharedSlotOpen img.shared-slot-button-template__btn__img{
+    box-shadow: none;
+}
+
+
+.slot-context-menu-divider{
+    width: 2px;
+    height: 20px;
+    background-color: @smartedit-white;
+    opacity: .35;
+    position: absolute;
+    top: 10px;
+}
+
+.ySESyncOpen:focus,
+.ySESyncOpen:active,
+.ySESyncOpen:hover,
+.ySESyncOpen:hover:active,
+.ySESyncOpen{
+    background-color: @smartedit-white;
+    color: @smartedit-blue4;
+}
+
+.slot-sync-button-template .btn-group.se-slot-ctx-menu__btn-group .se-slot-ctx-menu__btn{
+    margin-right: -2px;
+    margin-left: 2px;
+}
+
+.se-slot-ctx-menu__btn__sync{
+    font-size: @se-slot-ctx-menu__btn__sync--font-size;
+}
+
+.se-slot-ctx-menu__btn__sync:before{
+    vertical-align: text-top;
+}
+
+.se-slot-ctx-menu__btn__caution:before {
+    padding-bottom: @se-slot-ctx-menu__btn__caution--before--padding-bottom;
+    vertical-align: text-bottom;
+}
+
+.se-slotshared-button-popover{
+    background: @smartedit-white;
+    color: @smartedit-grey7;
+}
+
+.se-page-sensitive,
+.se-decorator-wrap {
+    height: 100%;
+}
+
+/********************************************************
+                HIDDEN COMPONENT MENU
+*********************************************************/
+
+.se-hidden-component-menu {
+    background: @smartedit-white;
+    border: 1px solid @smartedit-grey3;
+    min-width: 180px;
+}
+
+.se-hidden-component-menu__popup-anchor {
+    padding-right: 30px;
+}
+
+.hyicon-removelg + .se-hidden-component-menu__item-link {
+    color: @smartedit-red1;
+}
+
+.se-hidden-component-menu__item {
+    padding: 12px 15px;
+    color: @smartedit-grey21;
+
+    &:hover {
+        background-color: @smartedit-blue3;
+        color: @smartedit-white;
+
+        .se-hidden-component-menu__item-link {
+            color: inherit;
+        }
+    }
+}
+
+.se-hidden-component-menu__item-icon {
+    margin-right: 15px;
+}
+
+.se-hidden-component-menu__icon {
+    cursor: pointer;
+    font-size: 32px;
+    display: block;
+    line-height: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: @smartedit-blue;
+}

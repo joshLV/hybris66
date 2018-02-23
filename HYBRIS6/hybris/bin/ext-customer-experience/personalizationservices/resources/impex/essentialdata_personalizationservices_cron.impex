@@ -1,0 +1,13 @@
+######### Segment relation Cleanup CronJobs START #########
+INSERT_UPDATE FlexibleSearchRetentionRule;code[unique=true];searchQuery;actionReference;retentionTimeSeconds
+# Find all user to segment relations where user has not given consent to process his personal data for personalization
+;cxCustomerSegmentRetentionRule;SELECT {u2s.pk}, {u2s.itemtype} FROM {CxUserToSegment AS u2s} WHERE {u2s.user} NOT IN ({{ SELECT {cu.pk} FROM {Customer AS cu JOIN Consent AS c on {cu.PK} = {c.customer} JOIN ConsentTemplate AS t on {c.consentTemplate} = {t.pk} JOIN CxConfig AS conf on {conf.consentTemplates} LIKE CONCAT( '%', CONCAT( {t.PK} , '%' ) ) } WHERE {c.consentGivenDate} = ({{ SELECT MAX({cc.consentGivenDate}) FROM {Consent AS cc} WHERE {cc.customer} = {c.customer} AND {cc.consentTemplate} = {c.consentTemplate} }}) AND ( {c.consentWithdrawnDate} IS NULL OR {c.consentWithdrawnDate} >= ?CALC_RETIREMENT_TIME ) }});cxSegmentRelationCleanupRemoveCleanupAction;0
+ 
+# FS JOB
+INSERT_UPDATE RetentionJob;code[unique=true];retentionRule(code);batchSize
+;cxCustomerSegmentRetentionJob;cxCustomerSegmentRetentionRule;100
+
+# FS CRON JOB
+INSERT_UPDATE CronJob;code[unique=true];job(code);sessionLanguage(isoCode)[default=en]
+;cxCustomerSegmentRetentionCronJob;cxCustomerSegmentRetentionJob;
+#########  Segment relation Cleanup CronJobs END #########

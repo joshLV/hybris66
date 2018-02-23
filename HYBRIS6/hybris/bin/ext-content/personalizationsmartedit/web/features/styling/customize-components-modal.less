@@ -1,0 +1,73 @@
+/* *
+/* This file includes the styles used Customize Component Modal
+/* (which can accessed on hovering over components either from the combined view or customize panel view)
+*/
+
+@perso-customize-component__title--font-size: 16px;
+@perso-customize-component__modal-content--font-size: 15px;
+@perso-customize-component__modal-gutter: 0.4*@smartedit-gutter; //20px
+@perso-customize-component__modal-title-layout--padding: 0.5*@perso-customize-component__modal-gutter; //10px
+@perso-customize-component__modal-names--padding: 0.2*@perso-customize-component__modal-title-layout--padding; //2px
+.perso-customize-component {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: @perso-customize-component__modal-content--font-size;
+}
+
+.perso-customize-component__select2-container {
+    margin-bottom: @perso-customize-component__modal-gutter;
+    display: block;
+    .select2-result-label {
+        font-weight: @font-weight-bold;
+    }
+}
+
+.perso-customize-component__title-layout__letter-block {
+    padding-right: @perso-customize-component__modal-gutter;
+    display: inline-block;
+}
+
+.perso-customize-component__title-layout {
+    display: flex;
+    justify-content: flex-start;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: @perso-customize-component__title--font-size;
+    padding-bottom: @perso-customize-component__modal-gutter;
+    border-bottom: 1px solid @border-color-light-grey;
+}
+
+.perso-customize-component__title-layout__cust-name {
+    font-weight: @font-weight-bold;
+    min-width: 0;
+    display: inline-block;
+    padding-right: @perso-customize-component__modal-names--padding;
+    padding-top: @perso-customize-component__modal-title-layout--padding;
+}
+
+.perso-customize-component__title-layout__target-group-name {
+    min-width: 0;
+    display: inline-block;
+    padding-left: @perso-customize-component__modal-names--padding;
+    padding-top: @perso-customize-component__modal-title-layout--padding;
+}
+
+.perso-customize-component__data-list {
+    padding-top: @perso-customize-component__modal-gutter;
+}
+
+.perso-customize-component__select-group-label-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perso-customize-component__filter-layout {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.perso-customize-component__filter-label {
+    align-self: center;
+    margin-bottom: 0;
+}

@@ -1,0 +1,10 @@
+#
+# Import the Electronics Content Catalog
+#
+
+# Language
+$lang=en
+
+# Create Content Catalog
+UPDATE ContentCatalog;id[unique=true];catalogLevelName[lang=$lang]
+;electronicsContentCatalog;Global

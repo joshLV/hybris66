@@ -1,0 +1,171 @@
+$defaultCurrency=EUR
+$lang=en
+$defaultLanguage=en
+$deliveryCountries=US
+$catalog-id=testConfigureCatalog
+$catalog-version=Online
+$testCategory0-id=testConfigurableCategory0
+$testCategory1-id=testConfigurableCategory1
+$catalogversion=catalogversion(catalog(id[default=$catalog-id]),version[default=$catalog-version])[unique=true,default=$catalog-id:$catalog-version]
+$supercategories=supercategories(code,catalogversion(catalog(id[default=$catalog-id]),version[default=$catalog-version]))
+$prices=europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+
+$storeClassification=cpqTestClassification
+$systemVersion=1.0;;;;;;;;;
+$classCatalogVersion=catalogversion(catalog(id[default='$storeClassification']),version[default='1.0'])[unique=true,default='$storeClassification:1.0'];
+
+
+#################################################################################
+# SAP Configuration, Sales Area and Distribution Channel
+#################################################################################
+INSERT_UPDATE sapconfiguration;core_name[unique=true];sapcommon_salesOrganization;sapcommon_distributionChannel;sapcommon_division;sapproductconfig_enable_pricing;sapproductconfig_show_baseprice_and_options;sapproductconfig_show_deltaprices
+;WEF504;3020;30;00;TRUE;TRUE;TRUE
+
+INSERT_UPDATE ReferenceDistributionChannelMapping;salesOrganization[unique=true];distChannel[unique=true];distChannelName[lang=en];refDistChannelConditions;refDistChannelConditionsName[lang=en];refDistChannelCustMat;refDistChannelCustMatName[lang=en];
+;1000;10;"Distribution Channel 10";10;"Distribution Channel 10";10;"Distribution Channel 10"
+;3020;30;"Distribution Channel 30";30;"Distribution Channel 30";30;"Distribution Channel 30"
+
+INSERT_UPDATE ReferenceDivisionMapping;salesOrganization[unique=true];division[unique=true];divisionName[lang=en];refDivisionConditions;refDivisionConditionsName[lang=en];refDivisionCustomer;refDivisionCustomerName[lang=en]
+;1000;00;"Produktdivision 00";00;"Produktdivision 00";00;"Product Division 00"
+;3020;00;"Produktdivision 00";00;"Produktdivision 00";00;"Product Division 00"
+
+
+#################################################################################
+# Language, Currency and Units
+#################################################################################
+INSERT_UPDATE Language;isocode[unique=true];active;;;;;;
+;de;true;;;;;;
+;en;true;;;;;;
+
+UPDATE Language;isocode[unique=true];name[lang=de];name[lang=en];;;;;
+;de;Deutsch;German;;;;;
+;en;Englisch;English;;;;;
+
+INSERT_UPDATE Currency;isocode[unique=true];sapCode
+;EUR;EUR
+;USD;USD
+
+INSERT_UPDATE Unit;unitType[unique=true];code[unique=true];name[lang=de];name[lang=en];conversion;;;;;;;;;;;;;;;;;
+;pieces;PCE;PCE;PCE;1;;;;;;;;;;;;;;;;;
+
+INSERT_UPDATE Unit;code[unique=true];sapcode
+;pieces;ST
+;PCE;ST
+
+
+#################################################################################
+# Content Catalog
+#################################################################################
+INSERT_UPDATE Catalog;id[unique=true];name[lang=en];defaultCatalog;;;;;;
+;$catalog-id;$catalog-id;true;;;;;;
+
+INSERT_UPDATE CatalogVersion; catalog(id)[unique=true]; version[unique=true];active;defaultCurrency(isocode);;;;;;
+;$catalog-id;$catalog-version;true;EUR;;;;;;
+
+INSERT_UPDATE Category;code[unique=true];$catalogversion;name[lang=en];$supercategories;;;;;
+;$testCategory0-id;;$testCategory0-id;;;;;
+;$testCategory1-id;;$testCategory1-id,$testCategory0-id;;;;
+
+insert_update cpqconfiguratorsettings;$catalogversion[unique=true];id[unique=true];configuratortype(code);configurationcategory(code,$catalogversion);qualifier
+;;CPQConfiguratorSettings;CPQCONFIGURATOR;CPQConfigurableCategory;CPQCONFIGURATORSETTINGS
+
+insert_update configurationcategory;$catalogversion[unique=true];code[unique=true];name[lang=$lang];configuratorsettings(id,$catalogversion)
+;;CPQConfigurableCategory;CPQ Configurable Category;CPQConfiguratorSettings
+
+
+#################################################################################
+# Classification System
+#################################################################################
+INSERT_UPDATE ClassificationSystem; id[unique=true]; name[lang=en];;;;;;
+; $storeClassification ; $storeClassification ;;;;;;
+
+INSERT_UPDATE ClassificationSystemversion; catalog(id)[unique=true] ; version[unique=true] ; active ; writeprincipals(uid); languages(isocode); inclPacking[virtual=true,default=true]; inclDuty[virtual=true,default=true]; inclFreight[virtual=true,default=true]; inclAssurance[virtual=true,default=true]
+; $storeClassification ; $systemVersion ; true ;; en ;;;;
+
+INSERT_UPDATE ClassificationClass;$classCatalogVersion;code[unique=true];name[lang=$lang];description[lang=$lang];
+;;CPQ_HT_TEST;CPQ_HT_TEST;Classification class for the list of images for CPQ_HOME_THEATER;
+
+
+#################################################################################
+# Basestore, Basesite
+#################################################################################
+INSERT_UPDATE BaseStore;uid[unique=true];currencies(isocode);net;taxGroup(code);storelocatorDistanceUnit(code);defaultCurrency(isocode);languages(isocode);defaultLanguage(isocode);deliveryCountries(isocode);solrFacetSearchConfiguration(name);submitOrderProcessCode;paymentProvider;checkoutFlowGroup;sapconfiguration(core_name);cmsSites(uid);
+;testConfigureStore;$defaultCurrency;false;;km;$defaultCurrency;$defaultLanguage;$defaultLanguage;$deliveryCountries;;order-process;Mockup;defaultCheckoutGroup;WEF504;testConfigureSite;
+
+INSERT_UPDATE BaseStore;uid[unique=true];
+;dummyStore
+
+INSERT_UPDATE CMSSite;uid[unique=true];stores(uid);channel(code);defaultStockLevelThreshold;
+;testConfigureSite;testConfigureStore;B2C;10;
+
+
+#################################################################################
+# Products
+#################################################################################
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;ean;variantType(code);unit(code)[default=PCE];$catalogversion;name[lang=en];description[lang=en];summary[lang=en];$prices;
+;YSAP_SIMPLE_POC;CPQConfigurableCategory;SAP;;;;PCE;;SAP simple product for POC;This is an example for a very simple product to be used for the POC. Modelled as configurable product with dependencies.;SAP simple product for POC;1 PCE = 199 EUR N;
+;KD990SOL;CPQConfigurableCategory;SAP;;;;PCE;;KD990SOL;KD990SOL;KD990SOL;1 PCE = 199 EUR N;
+;YSAP_NOCFG;;SAP;;;;PCE;;SAP simple product;This is an example for a very simple product ;SAP simple product;1 PCE = 199 EUR N;
+;YSAP_NOSTOCK;;SAP;;;;PCE;;SAP simple product;This is an example for a very simple produc;SAP simple product;1 PCE = 199 EUR N;
+;CPQ_HOME_THEATER;CPQConfigurableCategory;SAP;;;;PCE;;CPQ_HOME_THEATER;Home Theater;Home Theater;1 PCE = 934 USD N;
+;000000000000056227;CPQConfigurableCategory;SAP;;;;PCE;;Greenhouse product numerical ;Numerical product id;Greenhouse product ;1 PCE = 99 USD N;
+;CPQ_LAPTOP;CPQConfigurableCategory;SAP;;;;PCE;;CPQ_LAPTOP;This is an example for a configurable laptop;SAP simple product;1 PCE = 999 EUR N;
+;AK_CAMERA_KIT;CPQConfigurableCategory;SAP;;;;PCE;;AK_CAMERA_KIT;This is an example for the cloud engine service;AK_CAMERA_KIT product;1 PCE = 2999 EUR N;
+
+
+#################################################################################
+# Availability
+#################################################################################
+# Vendor
+INSERT_UPDATE Vendor;code[unique=true];name
+;default;Default Vendor
+
+# Warehouse
+INSERT_UPDATE Warehouse;code[unique=true];name;baseStores(uid);vendor(code)[default=default];default[default=true]
+;default;Default Warehouse;testConfigureStore;
+;pw_warehouse_s;;testConfigureStore;
+
+INSERT_UPDATE StockLevel;productCode[unique=true];warehouse(code)[unique=true,default=default];available;inStockStatus(code);maxPreOrder[default=1];maxStockLevelHistoryCount[default=-1];overSelling[default=0];preOrder[default=0];reserved[default=0]
+;YSAP_SIMPLE_POC;pw_warehouse_s;222;forceInStock;
+;YSAP_NOCFG;pw_warehouse_s;222;forceInStock;
+;KD990SOL;pw_warehouse_s;333;forceInStock;
+;CPQ_HOME_THEATER;pw_warehouse_s;333;forceInStock;
+;000000000000056227;pw_warehouse_s;333;forceInStock;
+
+
+###################################################################################
+# CPQ Test Users
+###################################################################################
+$passwordEncoding=md5
+$defaultPassword=welcome
+$setPassword=@password[translator=de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator][default='$passwordEncoding:$defaultPassword']
+
+INSERT_UPDATE Usergroup;uid[unique=true];groups(uid);locname[lang=en];
+;ruleTestGroup1;;
+;ruleTestGroup2;;
+;asagentgroup;customergroup;
+
+INSERT_UPDATE Customer;description;uid[unique=true];originalUid;email;name;sessionCurrency(isocode)[default=$defaultCurrency];$setPassword;groups(uid);
+;CPQ Customer 01;cpq01;cpq01;cpq01@sap.com;cpq01;;;ruleTestGroup1;
+;CPQ Customer 02;cpq02;cpq02;cpq02@sap.com;cpq02;;;ruleTestGroup2;
+
+
+####################################################################################
+# Creating Employee for customer support mode
+####################################################################################
+INSERT_UPDATE UserGroup;UID[unique=true];groups(uid);locname[lang=$lang];description
+;cpqagentgroup;asagentgroup;"CPQ Assisted Service Agent Group";
+
+INSERT_UPDATE Employee;uid[unique=true];password[default=$defaultPassword];name;description;groups(uid)
+;cpqagent;;"Assisted Service Agent";"Assisted Service Agent for CPQ";cpqagentgroup
+
+
+###############################
+# B2C Customer
+###############################
+INSERT_UPDATE Customer;description;uid[unique=true];originalUid;name;title(code);sessionCurrency(isocode)[default='USD'];password[default=$defaultPassword];
+;Customer B2C;cpq02@sap.com;cpq02@sap.com;cpq02;dr;;;;;
+
+INSERT_UPDATE OrderCancelConfig;orderCancelAllowed;cancelAfterWarehouseAllowed;completeCancelAfterShippingStartedAllowed;partialCancelAllowed;partialOrderEntryCancelAllowed;queuedOrderWaitingTime;
+;true;true;true;true;true;100;
+

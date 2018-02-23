@@ -1,0 +1,2 @@
+INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];readPrincipals(uid)[mode=append];writePrincipals(uid)[mode=append]
+;powertoolsContentCatalog;Staged;;cmsmanagergroup,powertools-cmsmanagergroup

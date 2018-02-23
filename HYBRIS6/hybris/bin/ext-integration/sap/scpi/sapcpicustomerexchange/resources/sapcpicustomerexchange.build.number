@@ -1,0 +1,11 @@
+#Ant properties
+#Fri Nov 24 22:35:07 UTC 2017
+builddate=20171124 2235
+description=sapcpicustomerexchange
+group.id=de.hybris.platform
+module.name=platform-module
+name=sapcpicustomerexchange
+releasedate=20171122 1230
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

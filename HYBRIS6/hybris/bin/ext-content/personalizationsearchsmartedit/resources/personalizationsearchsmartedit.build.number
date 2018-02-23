@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 15:14:37 UTC 2017
+builddate=20171120 1514
+description=personalizationsearchsmartedit
+group.id=de.hybris.platform
+module.name=platform-module
+name=personalizationsearchsmartedit
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

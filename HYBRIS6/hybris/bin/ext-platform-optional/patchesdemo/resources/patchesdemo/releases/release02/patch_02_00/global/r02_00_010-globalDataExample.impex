@@ -1,0 +1,2 @@
+INSERT_UPDATE Customer ; uid[unique=true]                         ; name[default=testName]             
+                       ; r02_00_010_global_[$global] 

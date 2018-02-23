@@ -1,0 +1,11 @@
+#Ant properties
+#Sat Nov 25 17:32:39 UTC 2017
+builddate=20171125 1732
+description=smartedit
+group.id=de.hybris.platform
+module.name=platform-module
+name=smartedit
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

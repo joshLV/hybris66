@@ -1,0 +1,9 @@
+#
+# Import the Electronics Content Catalog
+#
+
+
+# Create Content Catalog
+UPDATE ContentCatalog;id[unique=true];name[lang=ja];catalogLevelName[lang=ja]
+
+;electronics-deContentCatalog;"エレクトロニクス コンテンツ カタログ DE";国

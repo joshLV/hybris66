@@ -1,0 +1,225 @@
+/********************************************************
+                    PAGE LIST
+*********************************************************/
+
+// CMS Page list styles
+@page-list-search--margin: 1em;
+
+.pageListWrapper {
+    min-height: 100%;
+    padding-top: 110px;
+    padding-left: @smartedit-gutter;
+    padding-right: @smartedit-gutter;
+}
+
+.se-page-list__title {
+    font-family: @font-open-sans;
+    color: @smartedit-grey9;
+    font-size: 28px;
+    font-weight: @font-weight--medium;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.se-page-list__page-link-icon {
+    font-size: 48px;
+    line-height: 0;
+    color: @smartedit-blue;
+}
+
+.se-page-list__page-link {
+    position: absolute;
+    top: -8px;
+    font-size: 15px;
+    font-weight: @font-weight--semibold;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.se-page-list__page-link--left {
+    left: 0;
+}
+
+.se-page-list__page-link--right {
+    right: 0;
+}
+
+.se-page-list__header {
+    position: relative;
+}
+
+.se-page-list__sub-title {
+    font-family: @font-open-sans;
+    color: @smartedit-grey3;
+    font-size: 18px;
+    font-weight: @font-weight--book;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ySEPage-list-search {
+    width: 50%;
+    margin: @page-list-search--margin auto;
+    font-family: @font-open-sans;
+    font-size: 16px;
+    color: @smartedit-grey4;
+    border: @default-grey-700 1px solid;
+}
+
+.ySEPage-list-search-icon{
+    position: relative;
+    top: -4px;
+    font-size: 30px;
+}
+
+.ySEPage-list-search-input.form-control{
+    border-left: none;
+    box-shadow: none;
+    z-index: auto;
+    padding-left: .1*@smartedit-gutter;
+    padding-bottom: .24*@smartedit-gutter;
+    border-radius: 0;
+    border-right: none;
+}
+
+.ySEPage-list-search-input:focus{
+    box-shadow: initial;
+    border-color: @default-grey-700;
+}
+
+.page-wizard-list{
+  height: 311px;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  .page-wizard-list-item{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid @smartedit-grey22;
+    border-bottom: 1px solid @smartedit-grey22;
+
+    .page-wizard-item-title{
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    &.page-wizard-item-selected{
+      background-color: @smartedit-grey22;
+    }
+  }
+}
+
+.page-wizard-type-item {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid @smartedit-grey22;
+  border-bottom: 1px solid @smartedit-grey22;
+
+  .page-wizard-type-item-title {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  &.page-wizard-type-item-selected{
+    background-color: @smartedit-grey22;
+  }
+}
+
+.page-type-step-template__item__icon,
+.page-type-step-template__item--info{
+    display: inline-block;
+}
+
+.page-type-step-template__item{
+    height: 85px;
+    border-top: 1px solid @smartedit-grey6;
+    display:flex;
+    align-items:center;
+}
+
+.page-type-step-template:last-child{
+    border-bottom: 1px solid @smartedit-grey6;;
+}
+
+.page-type-step-template__item__icon{
+    font-size: 30px;
+    padding-left: (@smartedit-gutter * .4);
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: @smartedit-blue2;
+    opacity: .15;
+}
+
+.page-type-step-template__item--info__title,
+.page-type-step-template__item--info__description{
+    font-family: @font-open-sans;
+    color: @smartedit-grey7;
+}
+
+.page-type-step-template__item--info__title{
+    font-size: 15px;
+    font-weight: @font-weight--bold;
+}
+
+.page-type-step-template__item--info__description{
+    font-size: 14px;
+    font-weight: @font-weight--normal;
+}
+
+.page-type-step-template__item__selected{
+    background-color: fade(@smartedit-blue2, 40%);
+}
+
+.page-type-step-template__item__selected .page-type-step-template__item__icon{
+    opacity: 1;
+}
+
+.page-type-step-template__text{
+    padding-bottom: 30px;
+}
+
+.paged-list-table.table-striped > tbody > tr:nth-of-type(even),
+.paged-list-table.table-striped > thead > tr {
+    background-color: @smartedit-grey10;
+}
+
+.paged-list-item .paged-list-table__body__td-menu {
+    padding: 0; 
+}
+
+.y-dropdown-more-menu__ddlb__icon{
+    font-size: 20px;
+}
+
+.page-editor-basic-info__pagetype,
+.page-editor-basic-info__p{
+    color: @smartedit-grey3;
+}
+
+.page-editor-basic-info__pagetype{
+    margin-top: 0;
+}
+
+.restrictionPageListIcon{
+    width: 20px;
+}
+
+.page-type-step-template-list-search{
+    margin-bottom: .2*@smartedit-gutter;
+    border: 1px solid @default-grey-700;
+}
+
+.ySESearchIcon{
+    background-color: @smartedit-white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    top: 0;
+    font-size: large;
+    color: @smartedit-grey3;
+}
+
+.ySESearchIcon.input-group-addon{
+    border-radius: 0;
+}

@@ -1,0 +1,11 @@
+#Ant properties
+#Tue Nov 14 16:31:43 UTC 2017
+builddate=20171114 1631
+description=customerreviewhmc
+group.id=de.hybris.platform
+module.name=platform-module
+name=customerreviewhmc
+releasedate=20171114 1458
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

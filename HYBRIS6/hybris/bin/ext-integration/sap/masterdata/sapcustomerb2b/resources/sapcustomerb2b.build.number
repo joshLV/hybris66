@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 15 19:39:04 UTC 2017
+builddate=20171115 1939
+description=sapcustomerb2b
+group.id=de.hybris.platform
+module.name=platform-module
+name=sapcustomerb2b
+releasedate=20171115 1019
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

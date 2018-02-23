@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <context:annotation-config />
+
+    <import resource="classpath:/META-INF/entitlement-rest-client-spring.xml"/>
+
+	<alias name="defaultEntitlementRestClient" alias="entitlementFacade"/>
+	<bean id="defaultEntitlementRestClient" class="com.hybris.services.entitlements.client.DefaultEntitlementRestClient"
+		  parent="genericRestClient">
+		<property name="endpointProvider">
+			<bean class="com.hybris.commons.client.SimpleEndpointProvider">
+				<property name="endpointURI" value="${ems.client.endpoint.uri}"/>
+			</bean>
+		</property>
+		<property name="endpointName" value=""/>
+		<property name="mediaType" value="${hybris.rest.client.media.type:application/json}"/>
+		<property name="httpClient" ref="entitlementHttpClient"/>
+	</bean>
+</beans>

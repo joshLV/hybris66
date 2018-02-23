@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+		   http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- DAOs -->
+
+	<bean id="abstractAsGenericDao" class="de.hybris.platform.adaptivesearch.daos.impl.AbstractAsGenericDao" abstract="true">
+		<property name="flexibleSearchService" ref="flexibleSearchService" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileDao" alias="asSearchProfileDao" />
+	<bean id="defaultAsSearchProfileDao" class="de.hybris.platform.adaptivesearch.daos.impl.DefaultAsSearchProfileDao" />
+
+	<alias name="defaultAsSearchConfigurationDao" alias="asSearchConfigurationDao" />
+	<bean id="defaultAsSearchConfigurationDao" class="de.hybris.platform.adaptivesearch.daos.impl.DefaultAsSearchConfigurationDao">
+		<property name="typeService" ref="typeService" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileActivationSetDao" alias="asSearchProfileActivationSetDao" />
+	<bean id="defaultAsSearchProfileActivationSetDao" class="de.hybris.platform.adaptivesearch.daos.impl.DefaultAsSearchProfileActivationSetDao" />
+	
+	<!-- Interceptors -->
+
+	<bean id="abstractInterceptor" abstract="true" class="de.hybris.platform.adaptivesearch.interceptors.AbstractAsInterceptor">
+		<property name="modelService" ref="modelService" />
+		<property name="asUidGenerator" ref="asUidGenerator" />
+		<property name="searchProviderFactory" ref="asSearchProviderFactory" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileInterceptor" alias="asSearchProfileInterceptor" />
+	<bean id="defaultAsSearchProfileInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsSearchProfileInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asSearchProfileInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asSearchProfileInterceptor" />
+		<property name="typeCode" value="AbstractAsSearchProfile" />
+	</bean>
+	
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asSearchProfileVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AbstractAsSearchProfile" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+	
+	<alias name="defaultAsConfigurationInterceptor" alias="asConfigurationInterceptor" />
+	<bean id="defaultAsConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asConfigurationInterceptor" />
+		<property name="typeCode" value="AbstractAsConfiguration" />
+	</bean>
+	
+	<alias name="defaultAsSearchConfigurationInterceptor" alias="asSearchConfigurationInterceptor" />
+	<bean id="defaultAsSearchConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsSearchConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asSearchConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asSearchConfigurationInterceptor" />
+		<property name="typeCode" value="AbstractAsSearchConfiguration" />
+	</bean>
+	
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asSearchConfigurationVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AbstractAsSearchConfiguration" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+
+	<alias name="defaultAsSimpleSearchConfigurationInterceptor" alias="asSimpleSearchConfigurationInterceptor" />
+	<bean id="defaultAsSimpleSearchConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsSimpleSearchConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asSimpleSearchConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asSimpleSearchConfigurationInterceptor" />
+		<property name="typeCode" value="AsSimpleSearchConfiguration" />
+	</bean>
+
+	<alias name="defaultAsCategoryAwareSearchConfigurationInterceptor" alias="asCategoryAwareSearchConfigurationInterceptor" />
+	<bean id="defaultAsCategoryAwareSearchConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsCategoryAwareSearchConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asCategoryAwareSearchConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asCategoryAwareSearchConfigurationInterceptor" />
+		<property name="typeCode" value="AsCategoryAwareSearchConfiguration" />
+	</bean>
+
+	<alias name="defaultAsFacetConfigurationInterceptor" alias="asFacetConfigurationInterceptor" />
+	<bean id="defaultAsFacetConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsFacetConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asFacetConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asFacetConfigurationInterceptor" />
+		<property name="typeCode" value="AbstractAsFacetConfiguration" />
+	</bean>
+	
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asFacetConfigurationVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AbstractAsFacetConfiguration" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+
+	<alias name="defaultAsBoostItemConfigurationInterceptor" alias="asBoostItemConfigurationInterceptor" />
+	<bean id="defaultAsBoostItemConfigurationInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsBoostItemConfigurationInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asBoostItemConfigurationInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asBoostItemConfigurationInterceptor" />
+		<property name="typeCode" value="AbstractAsBoostItemConfiguration" />
+	</bean>
+	
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asBoostItemConfigurationVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AbstractAsBoostItemConfiguration" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+	
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asBoostRuleConfigurationVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AbstractAsBoostRuleConfiguration" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+
+	<alias name="defaultAsBoostRuleInterceptor" alias="asBoostRuleInterceptor" />
+	<bean id="defaultAsBoostRuleInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsBoostRuleInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asBoostRuleInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asBoostRuleInterceptor" />
+		<property name="typeCode" value="AsBoostRule" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileActivationSetInterceptor" alias="asSearchProfileActivationSetInterceptor" />
+	<bean id="defaultAsSearchProfileActivationSetInterceptor" class="de.hybris.platform.adaptivesearch.interceptors.AsSearchProfileActivationSetInterceptor"
+		parent="abstractInterceptor" />
+
+	<bean id="asSearchProfileActivationSetInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="asSearchProfileActivationSetInterceptor" />
+		<property name="typeCode" value="AsSearchProfileActivationSet" />
+	</bean>
+
+	<!-- Exclude uniqueCatalogItemValidator, catalog version is not mandatory  -->
+	<bean id="asSearchProfileActivationSetVoidInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="VoidInterceptor" />
+		<property name="typeCode" value="AsSearchProfileActivationSet" />
+		<property name="replacedInterceptors" ref="uniqueCatalogItemValidator" />
+	</bean>
+
+	<!-- Context -->
+
+	<alias name="defaultAsSearchProfileContextFactory" alias="asSearchProfileContextFactory" />
+	<bean id="defaultAsSearchProfileContextFactory" class="de.hybris.platform.adaptivesearch.context.impl.DefaultAsSearchProfileContextFactory" />
+
+	<!-- Services -->
+
+	<alias name="defaultAsSearchProfileService" alias="asSearchProfileService" />
+	<bean id="defaultAsSearchProfileService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsSearchProfileService">
+		<property name="asSearchProfileDao" ref="asSearchProfileDao" />
+	</bean>
+
+	<alias name="defaultAsSearchConfigurationService" alias="asSearchConfigurationService" />
+	<bean id="defaultAsSearchConfigurationService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsSearchConfigurationService">
+		<property name="asSearchConfigurationDao" ref="asSearchConfigurationDao" />
+		<property name="asSearchProfileRegistry" ref="asSearchProfileRegistry" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileActivationService" alias="asSearchProfileActivationService" />
+	<bean id="defaultAsSearchProfileActivationService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsSearchProfileActivationService">
+		<property name="modelService" ref="modelService" />
+		<property name="sessionService" ref="sessionService" />
+		<property name="asSearchProfileRegistry" ref="asSearchProfileRegistry" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileCalculationService" alias="asSearchProfileCalculationService" />
+	<bean id="defaultAsSearchProfileCalculationService" class="de.hybris.platform.adaptivesearch.services.impl.DefaultAsSearchProfileCalculationService">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+		<property name="asSearchProfileRegistry" ref="asSearchProfileRegistry" />
+		<property name="asMergeStrategy" ref="asMergeStrategy" />
+		<property name="asCacheStrategy" ref="asCacheStrategy" />
+	</bean>
+
+	<!-- Strategies -->
+
+	<alias name="defaultAsUidGenerator" alias="asUidGenerator" />
+	<bean id="defaultAsUidGenerator" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsUidGenerator" />
+
+	<alias name="defaultAsCacheStrategy" alias="asCacheStrategy" />
+	<bean id="defaultAsCacheStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsCacheStrategy">
+		<property name="tenantService" ref="tenantService" />
+		<property name="configurationService" ref="configurationService" />
+		<property name="cacheRegion" ref="adaptiveSearchCacheRegion" />
+		<property name="invalidationTypeCodes">
+			<list value-type="java.lang.String">
+				<value>2240</value> <!-- AbstractAsSearchProfile -->
+				<value>2241</value> <!-- AbstractAsSearchConfiguration -->
+				<value>2242</value> <!-- AbstractAsFacetConfiguration -->
+				<value>2243</value> <!-- AbstractAsBoostItemConfiguration -->
+				<value>2244</value> <!-- AbstractAsBoostRuleConfiguration -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="abstractAsSearchProfileLoadStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsSearchProfileLoadStrategy"
+		abstract="true" />
+
+	<bean id="abstractAsSearchProfileCalculationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsSearchProfileCalculationStrategy"
+		abstract="true" />
+
+	<bean id="abstractAsSearchConfigurationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsSearchConfigurationStrategy"
+		abstract="true">
+		<property name="modelService" ref="modelService" />
+		<property name="l10nService" ref="l10nService" />
+		<property name="asSearchConfigurationDao" ref="asSearchConfigurationDao" />
+	</bean>
+
+	<bean id="abstractAsSearchProfileMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsSearchProfileMergeStrategy"
+		abstract="true" />
+
+	<alias name="defaultAsSimpleSearchProfileLoadStrategy" alias="asSimpleSearchProfileLoadStrategy" />
+	<bean id="defaultAsSimpleSearchProfileLoadStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsSimpleSearchProfileLoadStrategy"
+		parent="abstractAsSearchProfileLoadStrategy">
+		<property name="asSimpleSearchProfileConverter" ref="asSimpleSearchProfileConverter" />
+	</bean>
+
+	<alias name="defaultAsSimpleSearchProfileCalculationStrategy" alias="asSimpleSearchProfileCalculationStrategy" />
+	<bean id="defaultAsSimpleSearchProfileCalculationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsSimpleSearchProfileCalculationStrategy"
+		parent="abstractAsSearchProfileCalculationStrategy">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+	</bean>
+
+	<alias name="defaultAsSimpleSearchConfigurationStrategy" alias="asSimpleSearchConfigurationStrategy" />
+	<bean id="defaultAsSimpleSearchConfigurationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsSimpleSearchConfigurationStrategy"
+		parent="abstractAsSearchConfigurationStrategy" />
+
+	<alias name="defaultAsCategoryAwareSearchProfileLoadStrategy" alias="asCategoryAwareSearchProfileLoadStrategy" />
+	<bean id="defaultAsCategoryAwareSearchProfileLoadStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsCategoryAwareSearchProfileLoadStrategy"
+		parent="abstractAsSearchProfileLoadStrategy">
+		<property name="asCategoryAwareSearchProfileConverter" ref="asCategoryAwareSearchProfileConverter" />
+	</bean>
+
+	<alias name="defaultAsCategoryAwareSearchProfileCalculationStrategy" alias="asCategoryAwareSearchProfileCalculationStrategy" />
+	<bean id="defaultAsCategoryAwareSearchProfileCalculationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsCategoryAwareSearchProfileCalculationStrategy"
+		parent="abstractAsSearchProfileCalculationStrategy">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+		<property name="asMergeStrategy" ref="asMergeStrategy" />
+	</bean>
+
+	<alias name="defaultAsCategoryAwareSearchConfigurationStrategy" alias="asCategoryAwareSearchConfigurationStrategy" />
+	<bean id="defaultAsCategoryAwareSearchConfigurationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsCategoryAwareSearchConfigurationStrategy"
+		parent="abstractAsSearchConfigurationStrategy" />
+
+	<alias name="defaultAsMergeStrategy" alias="asMergeStrategy" />
+	<bean id="defaultAsMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsMergeStrategy"
+		parent="abstractAsSearchProfileMergeStrategy">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+		<property name="asMergeStrategyFactory" ref="asMergeStrategyFactory" />
+	</bean>
+
+    <alias name="defaultAsSearchProfileMergeStrategy" alias="asSearchProfileMergeStrategy" />
+    <bean id="defaultAsSearchProfileMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileMergeStrategy"
+          parent="abstractAsSearchProfileMergeStrategy">
+        <property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+        <property name="asMergeStrategyFactory" ref="asMergeStrategyFactory" />
+    </bean>
+
+	<alias name="defaultAsMergeStrategyFactory" alias="asMergeStrategyFactory" />
+	<bean id="defaultAsMergeStrategyFactory" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsMergeStrategyFactory">
+		<property name="facetsMergeModeMapping">
+			<map key-type="de.hybris.platform.adaptivesearch.enums.AsFacetsMergeMode" value-type="de.hybris.platform.adaptivesearch.strategies.AsFacetsMergeStrategy">
+				<entry key="ADD_AFTER" value-ref="asFacetsAddAfterMergeStrategy" />
+				<entry key="ADD_BEFORE" value-ref="asFacetsAddBeforeMergeStrategy" />
+				<entry key="REPLACE" value-ref="asFacetsReplaceMergeStrategy" />
+			</map>
+		</property>
+		<property name="boostItemsMergeModeMapping">
+			<map key-type="de.hybris.platform.adaptivesearch.enums.AsBoostItemsMergeMode" value-type="de.hybris.platform.adaptivesearch.strategies.AsBoostItemsMergeStrategy">
+				<entry key="ADD_AFTER" value-ref="asBoostItemsAddAfterMergeStrategy" />
+				<entry key="ADD_BEFORE" value-ref="asBoostItemsAddBeforeMergeStrategy" />
+				<entry key="REPLACE" value-ref="asBoostItemsReplaceMergeStrategy" />
+			</map>
+		</property>
+		<property name="boostRulesMergeModeMapping">
+			<map key-type="de.hybris.platform.adaptivesearch.enums.AsBoostRulesMergeMode" value-type="de.hybris.platform.adaptivesearch.strategies.AsBoostRulesMergeStrategy">
+				<entry key="ADD" value-ref="asBoostRulesAddMergeStrategy" />
+				<entry key="REPLACE" value-ref="asBoostRulesReplaceMergeStrategy" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="abstractAsFacetsMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsFacetsMergeStrategy"
+		abstract="true">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+	</bean>
+
+	<alias name="defaultAsFacetsAddAfterMergeStrategy" alias="asFacetsAddAfterMergeStrategy" />
+	<bean id="defaultAsFacetsAddAfterMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsFacetsAddAfterMergeStrategy"
+		parent="abstractAsFacetsMergeStrategy" />
+
+	<alias name="defaultAsFacetsAddBeforeMergeStrategy" alias="asFacetsAddBeforeMergeStrategy" />
+	<bean id="defaultAsFacetsAddBeforeMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsFacetsAddBeforeMergeStrategy"
+		parent="abstractAsFacetsMergeStrategy" />
+
+	<alias name="defaultAsFacetsReplaceMergeStrategy" alias="asFacetsReplaceMergeStrategy" />
+	<bean id="defaultAsFacetsReplaceMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsFacetsReplaceMergeStrategy"
+		parent="abstractAsFacetsMergeStrategy" />
+
+	<bean id="abstractAsBoostItemsMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsBoostRulesMergeStrategy"
+		abstract="true">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+	</bean>
+
+	<alias name="defaultAsBoostItemsAddAfterMergeStrategy" alias="asBoostItemsAddAfterMergeStrategy" />
+	<bean id="defaultAsBoostItemsAddAfterMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsBoostItemsAddAfterMergeStrategy"
+		parent="abstractAsBoostItemsMergeStrategy" />
+
+	<alias name="defaultAsBoostItemsAddBeforeMergeStrategy" alias="asBoostItemsAddBeforeMergeStrategy" />
+	<bean id="defaultAsBoostItemsAddBeforeMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsBoostItemsAddBeforeMergeStrategy"
+		parent="abstractAsBoostItemsMergeStrategy" />
+
+	<alias name="defaultAsBoostItemsReplaceMergeStrategy" alias="asBoostItemsReplaceMergeStrategy" />
+	<bean id="defaultAsBoostItemsReplaceMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsBoostItemsReplaceMergeStrategy"
+		parent="abstractAsBoostItemsMergeStrategy" />
+
+	<bean id="abstractAsBoostRulesMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AbstractAsBoostRulesMergeStrategy"
+		abstract="true">
+		<property name="asSearchProfileResultFactory" ref="asSearchProfileResultFactory" />
+	</bean>
+
+	<alias name="defaultAsBoostRulesAddMergeStrategy" alias="asBoostRulesAddMergeStrategy" />
+	<bean id="defaultAsBoostRulesAddMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsBoostRulesAddMergeStrategy"
+		parent="abstractAsBoostRulesMergeStrategy" />
+
+	<alias name="defaultAsBoostRulesReplaceMergeStrategy" alias="asBoostRulesReplaceMergeStrategy" />
+	<bean id="defaultAsBoostRulesReplaceMergeStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.AsBoostRulesReplaceMergeStrategy"
+		parent="abstractAsBoostRulesMergeStrategy" />
+
+
+	<alias name="defaultAsSearchProfileResultFactory" alias="asSearchProfileResultFactory" />
+	<bean id="defaultAsSearchProfileResultFactory" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileResultFactory">
+		<property name="configurationService" ref="configurationService" />
+	</bean>
+
+	<alias name="defaultAsSearchProfileRegistry" alias="asSearchProfileRegistry" />
+	<bean id="defaultAsSearchProfileRegistry" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileRegistry" />
+
+	<alias name="defaultAsSearchProfileActivationStrategy" alias="asSearchProfileActivationStrategy" />
+	<bean id="defaultAsSearchProfileActivationStrategy" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileActivationStrategy">
+		<property name="asSearchProfileActivationSetDao" ref="asSearchProfileActivationSetDao" />
+	</bean>
+	
+	<!-- Search profile mappings -->
+
+	<bean id="asSearchProfileMapping" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileMapping"
+		abstract="true" />
+
+	<bean id="asSearchProfileActivationMapping" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProfileActivationMapping"
+		abstract="true" />
+
+	<bean id="asSimpleSearchProfileMapping" parent="asSearchProfileMapping">
+		<property name="type" value="de.hybris.platform.adaptivesearch.model.AsSimpleSearchProfileModel" />
+		<property name="loadStrategy" ref="asSimpleSearchProfileLoadStrategy" />
+		<property name="calculationStrategy" ref="asSimpleSearchProfileCalculationStrategy" />
+		<property name="searchConfigurationStrategy" ref="asSimpleSearchConfigurationStrategy" />
+	</bean>
+
+	<bean id="asCategoryAwareSearchProfileMapping" parent="asSearchProfileMapping">
+		<property name="type" value="de.hybris.platform.adaptivesearch.model.AsCategoryAwareSearchProfileModel" />
+		<property name="loadStrategy" ref="asCategoryAwareSearchProfileLoadStrategy" />
+		<property name="calculationStrategy" ref="asCategoryAwareSearchProfileCalculationStrategy" />
+		<property name="searchConfigurationStrategy" ref="asCategoryAwareSearchConfigurationStrategy" />
+	</bean>
+
+	<bean id="defaultAsSearchProfileActivationMapping" parent="asSearchProfileActivationMapping">
+		<property name="priority" value="100" />
+		<property name="activationStrategy" ref="asSearchProfileActivationStrategy" />
+	</bean>
+	
+	<!-- Converters & Populators -->
+
+	<alias name="defaultAsSearchProfilePopulator" alias="asSearchProfilePopulator" />
+	<bean id="defaultAsSearchProfilePopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsSearchProfilePopulator" />
+
+	<alias name="defaultAsSimpleSearchProfilePopulator" alias="asSimpleSearchProfilePopulator" />
+	<bean id="defaultAsSimpleSearchProfilePopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsSimpleSearchProfilePopulator">
+		<property name="asConfigurableSearchConfigurationConverter" ref="asConfigurableSearchConfigurationConverter" />
+	</bean>
+
+	<alias name="defaultAsSimpleSearchProfileConverter" alias="asSimpleSearchProfileConverter" />
+	<bean id="defaultAsSimpleSearchProfileConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsSimpleSearchProfile" />
+		<property name="populators">
+			<list>
+				<ref bean="asSearchProfilePopulator" />
+				<ref bean="asSimpleSearchProfilePopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsCategoryAwareSearchProfilePopulator" alias="asCategoryAwareSearchProfilePopulator" />
+	<bean id="defaultAsCategoryAwareSearchProfilePopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsCategoryAwareSearchProfilePopulator"
+		parent="abstractPopulatingConverter">
+		<property name="asConfigurableSearchConfigurationConverter" ref="asConfigurableSearchConfigurationConverter" />
+	</bean>
+
+	<alias name="defaultAsCategoryAwareSearchProfileConverter" alias="asCategoryAwareSearchProfileConverter" />
+	<bean id="defaultAsCategoryAwareSearchProfileConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsCategoryAwareSearchProfile" />
+		<property name="populators">
+			<list>
+				<ref bean="asSearchProfilePopulator" />
+				<ref bean="asCategoryAwareSearchProfilePopulator" />
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultAsConfigurationPopulator" alias="asConfigurationPopulator" />
+	<bean id="defaultAsConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsConfigurationPopulator" />
+
+	<alias name="defaultAsSearchConfigurationPopulator" alias="asSearchConfigurationPopulator" />
+	<bean id="defaultAsSearchConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsSearchConfigurationPopulator" />
+
+	<alias name="defaultAsConfigurableSearchConfigurationPopulator" alias="asConfigurableSearchConfigurationPopulator" />
+	<bean id="defaultAsConfigurableSearchConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsConfigurableSearchConfigurationPopulator">
+		<property name="asPromotedFacetConverter" ref="asPromotedFacetConverter" />
+		<property name="asFacetConverter" ref="asFacetConverter" />
+		<property name="asExcludedFacetConverter" ref="asExcludedFacetConverter" />
+		<property name="asBoostRuleConverter" ref="asBoostRuleConverter" />
+		<property name="asPromotedItemConverter" ref="asPromotedItemConverter" />
+		<property name="asExcludedItemConverter" ref="asExcludedItemConverter" />
+	</bean>
+
+	<alias name="defaultAsConfigurableSearchConfigurationConverter" alias="asConfigurableSearchConfigurationConverter" />
+	<bean id="defaultAsConfigurableSearchConfigurationConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsConfigurableSearchConfiguration" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asSearchConfigurationPopulator" />
+				<ref bean="asConfigurableSearchConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+	
+	<alias name="defaultAsItemConfigurationPopulator" alias="asItemConfigurationPopulator" />
+	<bean id="defaultAsItemConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsItemConfigurationPopulator" />
+
+	<alias name="defaultAsFacetConfigurationPopulator" alias="asFacetConfigurationPopulator" />
+	<bean id="defaultAsFacetConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsFacetConfigurationPopulator" />
+
+	<alias name="defaultAsPromotedFacetConverter" alias="asPromotedFacetConverter" />
+	<bean id="defaultAsPromotedFacetConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsPromotedFacet" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asFacetConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsFacetConverter" alias="asFacetConverter" />
+	<bean id="defaultAsFacetConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsFacet" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asFacetConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsExcludedFacetConverter" alias="asExcludedFacetConverter" />
+	<bean id="defaultAsExcludedFacetConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsExcludedFacet" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asFacetConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsBoostItemConfigurationPopulator" alias="asBoostItemConfigurationPopulator" />
+	<bean id="defaultAsBoostItemConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsBoostItemConfigurationPopulator" />
+
+	<alias name="defaultAsPromotedItemConverter" alias="asPromotedItemConverter" />
+	<bean id="defaultAsPromotedItemConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsPromotedItem" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asBoostItemConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsExcludedItemConverter" alias="asExcludedItemConverter" />
+	<bean id="defaultAsExcludedItemConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsExcludedItem" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asBoostItemConfigurationPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsBoostRuleConfigurationPopulator" alias="asBoostRuleConfigurationPopulator" />
+	<bean id="defaultAsBoostRuleConfigurationPopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsBoostRuleConfigurationPopulator" />
+
+	<alias name="defaultAsBoostRulePopulator" alias="asBoostRulePopulator" />
+	<bean id="defaultAsBoostRulePopulator" class="de.hybris.platform.adaptivesearch.converters.populators.AsBoostRulePopulator" />
+
+	<alias name="defaultAsBoostRuleConverter" alias="asBoostRuleConverter" />
+	<bean id="defaultAsBoostRuleConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.adaptivesearch.data.AsBoostRule" />
+		<property name="populators">
+			<list>
+				<ref bean="asConfigurationPopulator" />
+				<ref bean="asItemConfigurationPopulator" />
+				<ref bean="asBoostRuleConfigurationPopulator" />
+				<ref bean="asBoostRulePopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAsSearchProviderFactory" alias="asSearchProviderFactory" />
+	<bean id="defaultAsSearchProviderFactory" class="de.hybris.platform.adaptivesearch.strategies.impl.DefaultAsSearchProviderFactory" />
+</beans>

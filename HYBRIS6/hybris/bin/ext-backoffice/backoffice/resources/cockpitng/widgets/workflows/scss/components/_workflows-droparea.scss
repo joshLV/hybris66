@@ -1,0 +1,96 @@
+@import "../support/_workflows-variables.scss";
+.yw-workflows-droparea {
+	border-radius: $_workflows__drop-area--border-radius;
+	border: $_workflows__drop-area--border;
+	padding: $_workflows__drop-area--padding;
+	text-align: center;
+	position: relative;
+
+	&-plus-icon,
+	&-plus-button {
+		&:before {
+			border-left: $_workflows__drop-area-plus-icon--border-width solid transparent;
+			margin-top: - floor($_workflows__drop-area-plus-icon--size/2);
+			height: $_workflows__drop-area-plus-icon--size;
+			border-color: inherit;
+			position: absolute;
+			content: "";
+			width: 0;
+			top: 50%;
+			left: 50%;
+		}
+		&:after {
+			border-top: $_workflows__drop-area-plus-icon--border-width solid transparent;
+			margin-left: - floor($_workflows__drop-area-plus-icon--size/2);
+			width: $_workflows__drop-area-plus-icon--size;
+			border-color: inherit;
+			position: absolute;
+			content: "";
+			height: 0;
+			left: 50%;
+			top: 50%;
+		}
+	}
+	&-plus-icon {
+		border-color: $_workflows__drop-area-plus--color;
+		height: $_workflows__drop-area-plus-icon--size;
+		width: $_workflows__drop-area-plus-icon--size;
+		position: relative;
+		display: inherit;
+		cursor: default;
+		color: transparent;
+		border-width: 0;
+	}
+	&-plus-button {
+		height: $_workflows__drop-area-plus-button--size;
+		width: $_workflows__drop-area-plus-button--size;
+		min-height: 0;
+		padding: 0;
+		position: relative;
+		margin: 0 auto;
+
+		&, 
+		&:hover, 
+		&:focus, 
+		&:active {
+			border: $_workflows__drop-area--border;
+			border-radius: $_workflows__drop-area--border-radius;
+			border-color: $_workflows__drop-area-plus--color;
+			background-color: transparent;
+			color: transparent;
+			box-shadow: none;
+		}
+		&:hover,
+		&:active {
+			border-color: $_workflows__drop-area--hover-color;
+		}
+	}
+	&.z-drag-over {
+		background: transparent;
+	}
+	&.z-drag-matching-drop-target.z-drag-over {
+		color: $_workflows__drop-area--hover-color;
+		border-color: $_workflows__drop-area--hover-color;
+
+		span {
+			color: $_workflows__drop-area--hover-color;
+		}
+		.yw-workflows-droparea-plus-button,
+		.yw-workflows-droparea-plus-icon {
+			border-color: $_workflows__drop-area--hover-color;
+			color: transparent;
+		}
+	}
+	.yw-workflows-list & {
+		span {
+			margin: $_workflows__drop-area-span--margin;
+		 	display: block;			
+		}
+		.yw-workflows-droparea-plus-icon {
+			margin: $_workflows__drop-area-plus-icon--margin;
+			color: transparent;
+			position: absolute;
+			top: 50%;
+		}
+	}
+}

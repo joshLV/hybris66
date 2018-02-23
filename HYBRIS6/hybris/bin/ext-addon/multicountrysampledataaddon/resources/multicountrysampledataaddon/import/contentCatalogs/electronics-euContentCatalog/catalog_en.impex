@@ -1,0 +1,9 @@
+#
+# Import the Electronics Content Catalog
+#
+
+
+# Create Content Catalog
+UPDATE ContentCatalog;id[unique=true];name[lang=en];catalogLevelName[lang=en]
+
+;electronics-euContentCatalog;"Electronics Content Catalog EU";Region

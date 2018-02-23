@@ -1,0 +1,559 @@
+[
+  {
+    "id" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Profile",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Profile/browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+    "created" : 1480343520113,
+    "createdByHybrisClient" : "hybris.profile-enricher",
+    "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+    "locked" : false,
+    "properties" : { },
+    "hasSkippedProperties" : false
+  },
+  {
+    "id" : "PRODUCT_9aa38ecaf19d4a28c9854cb22da181cdc41a39e8eb3bb19a9daaed3cad8011f2",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/ProductAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/ProductAffinity/PRODUCT_9aa38ecaf19d4a28c9854cb22da181cdc41a39e8eb3bb19a9daaed3cad8011f2",
+    "created" : 1480343696298,
+    "createdByHybrisClient" : "profile.product-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "productViewCount" : 1,
+      "productId" : "23355",
+      "updated" : "2016-11-28T14:34:56.281Z",
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "PRODUCT_9aa38ecaf19d4a28c9854cb22da181cdc41a39e8eb3bb19a9daaed3cad8011f2",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/ProductAffinity/core/HAS",
+      "created" : 1480343696444,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Identity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Identity/browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+    "created" : 1480343519887,
+    "createdByHybrisClient" : "hybris.profile-cust-acc-enr",
+    "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+    "locked" : false,
+    "properties" : {
+      "type" : "browser"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Identity/core/Profile/core/IDENTIFIES",
+      "created" : 1480343520113,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "KEYWORD_2a062ef2296b390e3d43d8b80496401e1d10734733618dd7685e680566264e51",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/KeywordSearchAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/KeywordSearchAffinity/KEYWORD_2a062ef2296b390e3d43d8b80496401e1d10734733618dd7685e680566264e51",
+    "created" : 1480343728374,
+    "createdByHybrisClient" : "profile.keyword-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "keywordSearchCount" : 1,
+      "updated" : "2016-11-28T14:35:28.355Z",
+      "affinity" : 0.3010299956639812,
+      "keywordSearchId" : "aaaaa"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "KEYWORD_2a062ef2296b390e3d43d8b80496401e1d10734733618dd7685e680566264e51",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/KeywordSearchAffinity/core/HAS",
+      "created" : 1480343728570,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "KEYWORD_af4c8ccfcb41d7fb57c67a965a586a017d77c83e957e7c33647f9a318cf7052e",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/KeywordSearchAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/KeywordSearchAffinity/KEYWORD_af4c8ccfcb41d7fb57c67a965a586a017d77c83e957e7c33647f9a318cf7052e",
+    "created" : 1480343673297,
+    "createdByHybrisClient" : "profile.keyword-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "keywordSearchCount" : 1,
+      "updated" : "2016-11-28T14:34:33.280Z",
+      "affinity" : 0.3010299956639812,
+      "keywordSearchId" : "coarsd"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "KEYWORD_af4c8ccfcb41d7fb57c67a965a586a017d77c83e957e7c33647f9a318cf7052e",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/KeywordSearchAffinity/core/HAS",
+      "created" : 1480343673487,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "KEYWORD_e3982cd44b06987df8c582e8a4790e66b3c071d21a657d819795cb754ba15505",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/KeywordSearchAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/KeywordSearchAffinity/KEYWORD_e3982cd44b06987df8c582e8a4790e66b3c071d21a657d819795cb754ba15505",
+    "created" : 1480343732922,
+    "createdByHybrisClient" : "profile.keyword-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "keywordSearchCount" : 1,
+      "updated" : "2016-11-28T14:35:32.909Z",
+      "affinity" : 0.3010299956639812,
+      "keywordSearchId" : "card"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "KEYWORD_e3982cd44b06987df8c582e8a4790e66b3c071d21a657d819795cb754ba15505",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/KeywordSearchAffinity/core/HAS",
+      "created" : 1480343733124,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "dima2811_3%2540test.com",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Identity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Identity/dima2811_3%2540test.com",
+    "created" : 1480343605978,
+    "createdByHybrisClient" : "profile.ecp-login-registrn-enr",
+    "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+    "locked" : false,
+    "properties" : {
+      "type" : "email"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "dima2811_3%2540test.com",
+      "tid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Identity/core/Profile/core/IDENTIFIES",
+      "created" : 1480343606080,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "PRODUCT_9352efdc11afec97b374b2ec57637926b84c27be4c5677e97fc6e6c34cf45d63",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/ProductAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/ProductAffinity/PRODUCT_9352efdc11afec97b374b2ec57637926b84c27be4c5677e97fc6e6c34cf45d63",
+    "created" : 1480343666223,
+    "createdByHybrisClient" : "profile.product-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "productViewCount" : 1,
+      "productId" : "443175",
+      "updated" : "2016-11-28T14:34:26.212Z",
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "PRODUCT_9352efdc11afec97b374b2ec57637926b84c27be4c5677e97fc6e6c34cf45d63",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/ProductAffinity/core/HAS",
+      "created" : 1480343666378,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "PRODUCT_352f394f1d75cb33187944c89a4e8f5a04af0b59d5fa7152776a40d9324c96dc",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/ProductAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/ProductAffinity/PRODUCT_352f394f1d75cb33187944c89a4e8f5a04af0b59d5fa7152776a40d9324c96dc",
+    "created" : 1480343745769,
+    "createdByHybrisClient" : "profile.product-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "productViewCount" : 1,
+      "productId" : "1322041",
+      "updated" : "2016-11-28T14:35:45.738Z",
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "PRODUCT_352f394f1d75cb33187944c89a4e8f5a04af0b59d5fa7152776a40d9324c96dc",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/ProductAffinity/core/HAS",
+      "created" : 1480343745936,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "PRODUCT_611407326c35b96e0563789af493390c650301de343304cdae980a57e2aa4b4c",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/ProductAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/ProductAffinity/PRODUCT_611407326c35b96e0563789af493390c650301de343304cdae980a57e2aa4b4c",
+    "created" : 1480343655729,
+    "createdByHybrisClient" : "profile.product-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "productViewCount" : 1,
+      "productId" : "1432722",
+      "updated" : "2016-11-28T14:34:15.716Z",
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_ac5722aa-8e69-4439-8c4d-5519c69956e1",
+      "tid" : "PRODUCT_611407326c35b96e0563789af493390c650301de343304cdae980a57e2aa4b4c",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/ProductAffinity/core/HAS",
+      "created" : 1480343655898,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e45ef6a5-71c3-470f-943d-58220a4df3ac",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "CATEGORY_01208c36c42e1340897f3706a3b701a0a6e36690d12516c3fd1fdad9888ed05d",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/CategoryAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/CategoryAffinity/CATEGORY_01208c36c42e1340897f3706a3b701a0a6e36690d12516c3fd1fdad9888ed05d",
+    "created" : 1478151554980,
+    "createdByHybrisClient" : "profile.category-affinity-enrich",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "updated" : 1478151554947,
+      "categoryId" : "816",
+      "categoryViewCount" : 1,
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_a30e39a9-76c8-413d-b172-20e0183e5a29",
+      "tid" : "CATEGORY_01208c36c42e1340897f3706a3b701a0a6e36690d12516c3fd1fdad9888ed05d",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/CategoryAffinity/core/HAS",
+      "created" : 1478151555275,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "e3abac33-1cc8-490c-b297-61db0a55710a",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "browser_91285218-1007-44ce-9459-564d57455a84",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Profile",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Profile/browser_91285218-1007-44ce-9459-564d57455a84",
+    "created" : 1487306780143,
+    "createdByHybrisClient" : "hybris.profile-enricher",
+    "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+    "locked" : false,
+    "properties" : { },
+    "hasSkippedProperties" : false
+  },
+  {
+    "id" : "DEVICE_FINGERPRINT_110564750",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/DeviceFingerprintAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/DeviceFingerprintAffinity/DEVICE_FINGERPRINT_110564750",
+    "created" : 1487306780285,
+    "createdByHybrisClient" : "lambda.executor",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "deviceType" : "Computer",
+      "operatingSystemNoVersion" : "Windows_10",
+      "browserNoVersion" : "Microsoft_Edge",
+      "updated" : "2017-02-17T04:46:37.508Z",
+      "usedCount" : 1,
+      "affinity" : 0.30102999566398114
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "browser_91285218-1007-44ce-9459-564d57455a84",
+      "tid" : "DEVICE_FINGERPRINT_110564750",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/DeviceFingerprintAffinity/core/HAS",
+      "created" : 1487306780362,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "PRODUCT_ec05cb112f2b73779cce10f83b6327636bbb26c25ae5a6af9ffa96e818fca5ee",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/ProductAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/ProductAffinity/PRODUCT_ec05cb112f2b73779cce10f83b6327636bbb26c25ae5a6af9ffa96e818fca5ee",
+    "created" : 1487306789548,
+    "createdByHybrisClient" : "profile.product-affinity-enriche",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "productViewCount" : 1,
+      "productId" : "553637",
+      "updated" : "2017-02-17T04:46:29.546Z",
+      "affinity" : 0.3010299956639812
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "HAS",
+      "fid" : "browser_91285218-1007-44ce-9459-564d57455a84",
+      "tid" : "PRODUCT_ec05cb112f2b73779cce10f83b6327636bbb26c25ae5a6af9ffa96e818fca5ee",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/ProductAffinity/core/HAS",
+      "created" : 1487306789722,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "DEVICE_1601101523",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/commerce/DeviceTypeAffinity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/commerce/DeviceTypeAffinity/DEVICE_1601101523",
+    "created" : 1487306780813,
+    "createdByHybrisClient" : "lambda.executor",
+    "consentReference" : "TENANT",
+    "locked" : false,
+    "properties" : {
+      "deviceType" : "Computer",
+      "updated" : "2017-02-17T04:46:37.452Z",
+      "usedCount" : 1,
+      "affinity" : 0.30102999566398114
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "browser_91285218-1007-44ce-9459-564d57455a84",
+      "tid" : "DEVICE_1601101523",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/commerce/DeviceTypeAffinity/core/HAS",
+      "created" : 1487306780886,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "browser_ff176426-408b-4799-a67a-dd6709142e21",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Profile",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Profile/browser_ff176426-408b-4799-a67a-dd6709142e21",
+    "created" : 1487306229896,
+    "createdByHybrisClient" : "hybris.profile-enricher",
+    "consentReference" : "d3af9bcc-0033-44e4-b5f4-423ff0953e2d",
+    "locked" : false,
+    "properties" : { },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "browser_91285218-1007-44ce-9459-564d57455a84",
+      "tid" : "browser_ff176426-408b-4799-a67a-dd6709142e21",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/core/Profile/core/IS",
+      "created" : 1487306784221,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+    "id" : "dima1702_1%2540test.com",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/nodes/core/Identity",
+    "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/core/Identity/dima1702_1%2540test.com",
+    "created" : 1487306322307,
+    "createdByHybrisClient" : "profile.ecp-login-registrn-enr",
+    "consentReference" : "d3af9bcc-0033-44e4-b5f4-423ff0953e2d",
+    "locked" : false,
+    "properties" : {
+      "type" : "email"
+    },
+    "hasSkippedProperties" : false,
+    "relations" : [ {
+      "id" : "1",
+      "fid" : "dima1702_1%2540test.com",
+      "tid" : "browser_91285218-1007-44ce-9459-564d57455a84",
+      "tenant" : "ecpasmproj",
+      "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Identity/core/Profile/core/IDENTIFIES"
+    ,
+      "created" : 1487306784006,
+      "createdByHybrisClient" : {
+        "present" : true
+      },
+      "locked" : false,
+      "consentReference" : "4c2e57ae-debd-40b0-b32e-5fa28586650b",
+      "hasSkippedProperties" : false,
+      "properties" : { }
+    } ]
+  },
+  {
+  "id" : "e7baf471d427316e9ecab39692eabc3e",
+  "tenant" : "ecpasmproj",
+  "schema" : "https://api.yaas.io/metamodel/v1/nodes/loyalty/LoyaltyPointsHistory",
+  "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/loyalty/LoyaltyPointsHistory/e7baf471d427316e9ecab39692eabc3e",
+  "created" : 1483025120825,
+  "createdByHybrisClient" : "cecmktloyalty.yloyalty-member-enricher",
+  "consentReference" : "TENANT",
+  "locked" : false,
+  "properties" : {
+    "loyaltyPointsHistory" : "{2016-12-29T16:04:49.678=-80, 2016-12-29T16:04:19.915=150, 2016-12-29T15:48:52.647=100, 2016-12-29T15:25:20.809=0}",
+    "currentLoyaltyBalance" : "170"
+  },
+  "hasSkippedProperties" : false,
+  "relations" : [ {
+    "id" : "1",
+    "fid" : "6fd39a5a82bf4619bcbae3b26d38c207",
+    "tid" : "e7baf471d427316e9ecab39692eabc3e",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/loyalty/LoyaltyPointsHistory/loyalty/HAS",
+    "created" : 1483025120924,
+    "createdByHybrisClient" : {
+      "present" : true
+    },
+    "locked" : false,
+    "consentReference" : "e3fdb3d6-93f8-4e86-b87b-ca6a391488ac",
+    "hasSkippedProperties" : false,
+    "properties" : {
+      "updateTimeStamp" : "2016-12-29T15:25:09.375+0000"
+    }
+  } ]
+},
+{
+  "id" : "e7baf471d427316e9ecab39692eabc3e",
+  "tenant" : "ecpasmproj",
+  "schema" : "https://api.yaas.io/metamodel/v1/nodes/loyalty/LoyaltyActivityStatistics",
+  "neighbours_url" : "https://api.yaas.io/hybris/profile-secured-graph/v1/ecpasmproj/neighbours/loyalty/LoyaltyActivityStatistics/e7baf471d427316e9ecab39692eabc3e",
+  "created" : 1483025121039,
+  "createdByHybrisClient" : "cecmktloyalty.yloyalty-member-enricher",
+  "consentReference" : "TENANT",
+  "locked" : false,
+  "properties" : {
+    "activityScoreHistory" : "{2016-12-29T16:04:20.203=250, 2016-12-29T15:48:52.909=100, 2016-12-29T15:25:21.019=0}",
+    "activityScore" : "250"
+  },
+  "hasSkippedProperties" : false,
+  "relations" : [ {
+    "id" : "1",
+    "fid" : "6fd39a5a82bf4619bcbae3b26d38c207",
+    "tid" : "e7baf471d427316e9ecab39692eabc3e",
+    "tenant" : "ecpasmproj",
+    "schema" : "https://api.yaas.io/metamodel/v1/relations/core/Profile/loyalty/LoyaltyActivityStatistics/loyalty/HAS",
+    "created" : 1483025121167,
+    "createdByHybrisClient" : {
+      "present" : true
+    },
+    "locked" : false,
+    "consentReference" : "e3fdb3d6-93f8-4e86-b87b-ca6a391488ac",
+    "hasSkippedProperties" : false,
+    "properties" : {
+      "updateTimeStamp" : "2016-12-29T15:25:09.375+0000"
+    }
+  }]
+ }
+]

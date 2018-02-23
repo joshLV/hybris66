@@ -1,0 +1,11 @@
+#Ant properties
+#Fri Nov 10 20:05:45 UTC 2017
+builddate=20171110 2005
+description=mobileserviceshmc
+group.id=de.hybris.platform
+module.name=platform-module
+name=mobileserviceshmc
+releasedate=20171110 1320
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

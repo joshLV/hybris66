@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd
+           http://www.springframework.org/schema/util
+			http://www.springframework.org/schema/util/spring-util.xsd">
+           
+	<alias name="defaultCustomerCouponFacade" alias="customerCouponFacade"/>
+	<bean id="defaultCustomerCouponFacade" class="de.hybris.platform.customercouponfacades.impl.DefaultCustomerCouponFacade">
+		<property name="userService" ref="userService"/>
+		<property name="customerCouponService" ref="customerCouponService"/>
+		<property name="customerCouponConverter" ref="customerCouponConverter"/>
+		<property name="cartFacade" ref="cartFacade"/>	
+		<property name="voucherFacade" ref="voucherFacade"/>
+		<property name="customerCouponRemovableStrategy" ref="customerCouponRemovableStrategy"/>
+	</bean>
+	
+	<alias name="defaultCustomerCouponRemovableStrategy" alias="customerCouponRemovableStrategy"/>
+	<bean id="defaultCustomerCouponRemovableStrategy" class="de.hybris.platform.customercouponfacades.strategies.impl.DefaultCustomerCouponRemovableStrategy">
+		<property name="customerCouponService" ref="customerCouponService"/>
+	</bean>
+	
+	<bean id="customerCouponPopulator" class="de.hybris.platform.customercouponfacades.converter.populators.CustomerCouponPopulator">
+		<property name="commerceCommonI18NService" ref="commerceCommonI18NService"/>
+		<property name="customerCouponService" ref="customerCouponService"/>
+	</bean>
+	
+	<alias name="defaultCustomerCouponConverter" alias="customerCouponConverter"/>
+	<bean id="defaultCustomerCouponConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.customercouponfacades.customercoupon.data.CustomerCouponData"/>
+		<property name="populators">
+			<list>
+				<ref bean="customerCouponPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="couponNotificationEmailContext" class="de.hybris.platform.customercouponfacades.process.email.context.CouponNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="customerCouponConverter" ref="customerCouponConverter"/>
+	</bean>
+	
+	<alias name="defaultCustomerNotificationPreferenceCheckStrategy" alias="customerNotificationPreferenceCheckStrategy"/>
+	<bean id="defaultCustomerNotificationPreferenceCheckStrategy" class="de.hybris.platform.customercouponfacades.strategies.impl.DefaultCustomerNotificationPreferenceCheckStrategy">
+		<property name="userService" ref="userService"/>
+		<property name="notificationChannelHooks" ref="notificationChannelHooks"/>
+	</bean>
+	
+	<bean id="emailChannelHook" class="de.hybris.platform.customercouponfacades.hooks.impl.EmailChannelHook"/>
+	
+	<bean id="smsChannelHook" class="de.hybris.platform.customercouponfacades.hooks.impl.SmsChannelHook"/>
+	
+	<util:list id="notificationChannelHooks" value-type="de.hybris.platform.customercouponfacades.hooks.NotificationChannelHook">
+		<ref bean="emailChannelHook"/>
+		<ref bean="smsChannelHook"/>
+	</util:list>
+</beans>

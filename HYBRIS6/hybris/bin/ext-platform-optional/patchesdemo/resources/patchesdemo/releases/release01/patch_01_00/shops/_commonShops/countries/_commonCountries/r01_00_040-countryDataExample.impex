@@ -1,0 +1,2 @@
+INSERT_UPDATE Customer ; uid[unique=true]                         ; name[default=testName]  
+                       ; com\com\r01_00_040_country_[$country]                      

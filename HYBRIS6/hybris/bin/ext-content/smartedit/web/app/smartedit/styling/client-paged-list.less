@@ -1,0 +1,67 @@
+// UI Client Paged list directive
+
+.paged-list-count {
+    //text-align: center;
+    margin-bottom: 0;
+    margin-left: 1em;
+
+    font-family: @font-open-sans;
+    font-size: 16px;
+    color: @smartedit-grey3;
+    font-style: italic;
+}
+
+.paged-list-table {
+  margin: 0 auto @smartedit-gutter;
+
+  .paged-list-header {
+    position: relative;
+  }
+
+  .header-icon {
+
+    &.down {
+
+      &:after {
+        content: '\2193';
+      }
+
+    }
+
+    &.up {
+
+      &:after {
+        content: '\2191'
+      }
+
+    }
+
+  }
+
+  .paged-list-item {
+    cursor: default;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .paged-list-item td {
+    vertical-align: middle;
+    cursor: default;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .paged-list-item-name, .paged-list-item-title {
+    font-size: 1em;
+    color: @smartedit-blue;
+    font-weight: bolder;
+  }
+
+}
+
+
+.se-trashed-pages .paged-list-item-name{
+  color: @smartedit-grey7;
+}

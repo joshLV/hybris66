@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 06:49:54 UTC 2017
+builddate=20171120 0649
+description=sapreturnsexchangeb2b
+group.id=de.hybris.platform
+module.name=platform-module
+name=sapreturnsexchangeb2b
+releasedate=20171118 1516
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

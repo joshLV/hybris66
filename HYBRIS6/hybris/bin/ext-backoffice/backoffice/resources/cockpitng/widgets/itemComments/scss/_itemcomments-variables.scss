@@ -1,0 +1,59 @@
+@import "cockpitng-globals.scss";
+
+$_item-comments__bar-container--margin-left: $container-spacing-default__third;
+
+$_item-comments__bar-icon--background-image: url('images/icon_comments.svg');
+$_item-comments__bar-icon--background: $_item-comments__bar-icon--background-image center no-repeat;
+$_item-comments__bar-icon--size: 21px;
+$_item-comments__bar-icon--margin: floor($_item-comments__bar-icon--size/2) * -1;
+$_item-comments__bar-bottom-button--size: $globals__toolbar--height;
+
+$_item-comments__bar-comment-counter--color: $black;
+$_item-comments__bar-comment-counter--cursor: pointer;
+$_item-comments__bar-comment-counter--font-size: 8px;
+$_item-comments__bar-comment-counter--bg: $white;
+
+$_item-comments__bar-comment-counter--min-width: 12px;
+$_item-comments__bar-comment-counter--height: 12px;
+$_item-comments__bar-comment-counter--border-radius: ceil($_item-comments__bar-comment-counter--height / 2);
+$_item-comments__bar-comment-counter--padding: 0 2px;
+
+$_item-comments__bar-comment-counter--top: floor($_item-comments__bar-comment-counter--font-size/3) * -1;
+$_item-comments__bar-comment-counter--left: $_item-comments__bar-icon--size - floor($_item-comments__bar-comment-counter--min-width/2);
+$_item-comments__bar-bottom-comment-counter--top: floor($_item-comments__bar-bottom-button--size/2) - floor($_item-comments__bar-icon--size/2) - floor($_item-comments__bar-comment-counter--font-size/3);
+$_item-comments__bar-bottom-comment-counter--left: $_item-comments__bar-icon--size - floor($_item-comments__bar-comment-counter--min-width/2) + (floor($_item-comments__bar-bottom-button--size/2) - floor($_item-comments__bar-icon--size/2));
+
+$_item-comments__popup--max-width: 360px;
+$_item-comments__bar-bottom-popup--bottom: $_item-comments__bar-bottom-button--size;
+
+
+$_item-comments__list--max-height: 480px;
+$_item-comments__list--overflow: auto;
+
+$_item-comments__comment-list--border: $boxes--border__thin solid $grey__light--1100;
+$_item-comments__one-comment--padding: 20px $container-spacing-default__half;
+
+$_item-comments__comment-header--margin-bottom: 0 0 $container-spacing-default__third;
+
+$_item-comments__comment-author--padding-right: $container-spacing-default__third;
+$_item-comments__comment-date-approx--width: 144px;
+$_item-comments__comment-author--max-width: $_item-comments__popup--max-width - 2* (nth($_item-comments__one-comment--padding, 2)) - $_item-comments__comment-date-approx--width;
+$_item-comments__comment-author--font-weight: $font-weight-bold;
+
+$_item-comments__comment-date--color: $blue__greyish--400;
+
+$_item-comments__comment-empty--padding: 20px;
+$_item-comments__comment--margin-bottom: $container-spacing-default__third;
+
+$_item-comments__default-button--font-size: $font-size__semi-base;
+$_item-comments__default-button--color: $blue__greyish--400;
+$_item-comments__default-button-primary--color: darken($blue__default--100, 11%);
+$_item-comments__default-button--hover-color: $blue__default--100;
+
+$_item-comments__default-button--height: $globals__toolbar--height;
+$_item-comments__default-button--margin: $container-spacing-default__third 0;
+
+
+$_item-comments__add-comment-section--padding: 20px $container-spacing-default__half $container-spacing-default__half;
+$_item-comments__add-comment-section-textbox--margin-bottom:  $_item-comments__comment--margin-bottom;
+$_item-comments__add-comment-section-textbox--max-height: 200px;

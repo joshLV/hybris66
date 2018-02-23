@@ -1,0 +1,10 @@
+<fop version="2.2">
+  <strict-validation>false</strict-validation>
+  <renderers>
+    <renderer mime="application/pdf">
+      <fonts>
+        <auto-detect/>
+      </fonts>
+    </renderer>
+  </renderers>
+</fop>

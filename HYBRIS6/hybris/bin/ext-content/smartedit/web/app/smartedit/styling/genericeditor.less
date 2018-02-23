@@ -1,0 +1,301 @@
+@import (reference) "node_modules/bootstrap/less/bootstrap.less";
+@import (reference) "node_modules/bootstrap/less/responsive-utilities.less";
+@import (reference) "node_modules/bootstrap/less/utilities.less";
+@import (reference) "node_modules/bootstrap/less/variables.less";
+@import (reference) "variables.less";
+
+@modal-body--min-height: 400px;
+@modal-body--padding: .4*@smartedit-gutter @smartedit-gutter;
+
+@experience-selector-btn--padding-bottom: 7px;
+
+h1, h2, h3, h4, h5, h6, #experience-selector-btn{
+    font-family: "Open Sans", sans-serif;
+}
+
+.ySEGenericEditor{
+    .clearfix();
+    padding: 0;
+}
+
+.ySErow{
+    padding-bottom: @grid-gutter-width;
+}
+
+localized-element{
+
+    .nav-tabs>li{
+        border-top: 1px solid @smartedit-grey30;
+        border-bottom: 1px solid @smartedit-grey30;
+        border-left: 1px solid @smartedit-grey30;
+        font-weight: bold;
+    }
+
+    .nav-tabs>li:last-of-type{
+        border-right: 1px solid @smartedit-grey30;
+    }
+
+    .nav-tabs>li.active{
+        background-color: @smartedit-blue;
+        border-color: @smartedit-blue;
+        a{
+          color: @smartedit-white;
+        }
+        a.sm-tab-error{
+            color: @smartedit-red3;
+        }
+    }
+
+    ul.nav-tabs>.dropdown{
+        ul>li{
+            background-color: @smartedit-white;
+            a{
+                color: @smartedit-blue;
+            }
+        }
+
+        a.sm-tab-error{
+            color: @smartedit-red3;
+        }
+    }
+
+    &.multi-tabs-editor * {
+        transition: none;
+    }
+}
+
+
+.ySErow{
+    .make-row();
+}
+
+experience-selector{
+    @grid-selector-columns: 6;
+
+    label{
+        color: @smartedit-white;
+        font-weight: normal;
+    }
+
+    .ySEGenericEditor{
+        padding: 0;
+        form{
+            padding-bottom: 0;
+            padding-left: 0;
+            .modal-header{
+                background-color: inherit;
+                padding:  15px 50px;
+            }
+        }
+    }
+
+    .ySErow{
+        .make-sm-column(@grid-selector-columns);
+        height: 100px;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:nth-of-type(even){
+            padding-left: 50px;
+            padding-right: 30px;
+
+        }
+        &:nth-of-type(odd){
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+    }
+
+    .ySEBtnRow{
+        background: inherit;
+        .make-sm-column(12);
+    }
+}
+
+experience-selector-button .dropdown-menu.yDdResolution {
+    margin-top: 0px;
+    border-top: none;
+    padding-bottom: 0px;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+experience-selector-button>div.open{
+    background-color: @smartedit-lightblue;
+    color: @smartedit-white;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    padding-left: 0px;
+
+    #experience-selector-btn span{
+        color: @smartedit-white;
+    }
+}
+
+experience-selector-button>div{
+    text-align: left;
+    display: inline-block;
+}
+
+generic-editor-field input.form-control {
+    border-radius: 0;
+}
+
+
+generic-editor form label{
+    font-family: @font-open-sans;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+generic-editor-field .ySEField .ySEFieldPrefix{
+    padding-bottom: 10px;
+}
+
+generic-editor-field .ySEField .ySEFieldPostfix{
+    padding-top: 20px;
+}
+
+.modal-dialog .modal-body{
+    padding: @modal-body--padding;
+}
+
+//not applied for confirmation modals
+.modal:not(.yFrontModal) .modal-body{
+    min-height: @modal-body--min-height;
+}
+
+experience-selector-button experience-selector .modal-header h4.modal-title {
+    font-family: @font-open-sans;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+experience-selector-button experience-selector .ySErow label{
+    font-family: @font-open-sans;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.yWebsiteSelectBtn{
+    width: 100%;
+}
+
+.ySEpreview{
+    width: 100%;
+}
+
+.ySEpreview.open,
+.ySEpreview.open .yWebsiteSelectBtn{
+    background-color:   @smartedit-lightblue;
+}
+
+.ySEpreview.open .yWebsiteSelectBtn--arrow{
+    color: @smartedit-white;
+    opacity: 1;
+}
+
+.yWebsiteSelectBtn--arrow{
+    font-size: 17px;
+}
+
+#experience-selector-btn{
+    padding-top: .2*@smartedit-gutter;
+    padding-bottom: @experience-selector-btn--padding-bottom;
+    height: @toolbar--height;
+}
+
+.ySEpreview.open .yDdResolution{
+    border-top: @smartedit-border4;
+}
+
+body.mce-content-body {
+    padding-top: 0;
+}
+
+.ySEBooleanField__text{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.ySEBooleanField .y-toggle{
+    display: table;
+}
+
+.ySEBooleanField__text{
+    line-height: 42px;
+}
+
+.se-date-field {
+    width: 100%;
+}
+
+.se-date-field--input {
+    &.se-input--is-disabled {
+        border-right: 1px solid @smartedit-grey17;
+        border-radius: 0;
+    }
+    & + .bootstrap-datetimepicker-widget {
+        background-color: @smartedit-white;
+        color: @smartedit-black; //IE
+        color: initial;
+    }
+    box-shadow: none;
+    border-right: none;
+}
+
+.se-date-field--button-icon {
+    font-size: 1.1em;
+}
+
+.bootstrap-datetimepicker-widget,
+.se-date-field--input:focus {
+    + .se-date-field--button{
+        border-right: 1px solid @smartedit-blue13;
+        border-top: 1px solid @smartedit-blue13;
+        border-bottom: 1px solid @smartedit-blue13;
+        box-shadow: inset 0 1px 1px fade(@smartedit-black, 7.5%), 0 0 8px fade(@smartedit-blue13, 60%);
+    }
+}
+
+.se-date-field--button {
+    box-shadow: none;
+    background-color: @smartedit-white;
+    color: @smartedit-lightblue;
+    border-bottom: 1px solid @smartedit-grey17;
+    border-top: 1px solid @smartedit-grey17;
+    margin-top: 0;
+    border-radius: 0;
+    cursor: pointer;
+    &.se-date-field--button-has-warning {
+        border-right: 1px solid @smartedit-orange;
+        border-top: 1px solid @smartedit-orange;
+        border-bottom: 1px solid @smartedit-orange;
+    }
+    &.se-date-field--button-has-error {
+        border-right: 1px solid @smartedit-red;
+        border-top: 1px solid @smartedit-red;
+        border-bottom: 1px solid @smartedit-red;
+    }
+}
+
+.se-link-toggle__radio {
+    display: inline-block;
+    margin-right: .4*@smartedit-gutter;
+}
+
+.se-input--has-warning {
+    border-color: @smartedit-orange;
+}
+
+.se-input--has-error {
+    border-color: @smartedit-red;
+}
+
+.error-input,
+.se-input--has-error,
+.se-help-block--has-error {
+    color: @smartedit-red;
+}

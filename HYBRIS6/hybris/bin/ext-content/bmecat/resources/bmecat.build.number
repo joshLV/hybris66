@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Nov 09 12:00:26 UTC 2017
+builddate=20171109 1200
+description=bmecat
+group.id=de.hybris.platform
+module.name=platform-module
+name=bmecat
+releasedate=20171108 2146
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

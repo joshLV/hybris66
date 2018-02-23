@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 22 16:50:36 CET 2017
+builddate=20171122 1650
+description=yprofilecommons
+group.id=de.hybris.platform
+module.name=platform-module
+name=yprofilecommons
+releasedate=20171103 0803
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

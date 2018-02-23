@@ -1,0 +1,3 @@
+$countryCode=CA
+$defaultCurrency=CAD
+$storeUid=$hubCode_Store

@@ -1,0 +1,88 @@
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2017 SAP SE or an SAP affiliate company.  All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.hybris.onpremise</groupId>
+		<artifactId>superpom</artifactId>
+		<version>2.1.6</version>
+	</parent>
+
+
+	<groupId>de.hybris.platform</groupId>
+	<artifactId>hybrisrootcauseanalysis-module</artifactId>
+	<version>6.6.0.0-RC1</version>
+	<packaging>pom</packaging>
+
+	
+
+	<!-- Define your hybris dependencies here -->
+	<dependencies>
+		<dependency>
+			<artifactId>platform-module</artifactId>
+			<groupId>de.hybris.platform</groupId>
+			<type>zip</type>
+			<version>6.6.0.0-M9</version>
+		</dependency>		
+		<dependency>
+			<groupId>de.hybris.platform</groupId>
+			<artifactId>hybrisdatasupplier-module</artifactId>
+			<version>6.6.0.0-RC1</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+		  <artifactId>search-and-nav-module</artifactId>
+		  <groupId>de.hybris.platform</groupId>
+		  <type>zip</type>
+		  <version>6.5.0.0-RC3</version>
+		</dependency>
+		<dependency>
+			<artifactId>cockpit-core-module</artifactId>
+			<groupId>de.hybris.platform</groupId>
+			<type>zip</type>
+			<version>6.5.0.0-RC3</version>
+		</dependency>
+		<dependency>
+		  <artifactId>backoffice-module</artifactId>
+		  <groupId>de.hybris.platform</groupId>
+		  <type>zip</type>
+		  <version>6.5.0.0-RC9</version>
+		</dependency>
+		<!-- Add backoffice artifact -->
+	</dependencies>
+
+	<properties>
+
+		<!-- hybris platform properties -->
+		<platform.extensions>hybrisrootcauseanalysis</platform.extensions>
+		<testclasses.extensions>hybrisrootcauseanalysis</testclasses.extensions>
+		<codequality.extensions>hybrisrootcauseanalysis</codequality.extensions>
+
+		<!-- hybris distribution properties -->
+		<dist.extensions.binary>hybrisrootcauseanalysis</dist.extensions.binary>
+		<dist.extensions.source></dist.extensions.source>
+		<dist.create.source.dist>true</dist.create.source.dist>
+		<dist.create.en.langpack>true</dist.create.en.langpack>
+		<dist.include.platform>false</dist.include.platform>
+		<hybris.local.ext.hybrisrootcauseanalysis.package>ext-supportability</hybris.local.ext.hybrisrootcauseanalysis.package>			
+		
+		<sonar.projectName>hybrisrootcauseanalysis-module EC-Module</sonar.projectName>
+		<sonar.project.key>de.hybris.platform:hybrisrootcauseanalysis-module</sonar.project.key>
+
+		<sonar.sources>source/rootcauseanalysis/src,source/rootcauseanalysis/web/src</sonar.sources>	
+		<sonar.java.binaries>source/rootcauseanalysis/classes,source/rootcauseanalysis/web/webroot/WEB-INF/classes</sonar.java.binaries>
+	</properties>
+
+</project>

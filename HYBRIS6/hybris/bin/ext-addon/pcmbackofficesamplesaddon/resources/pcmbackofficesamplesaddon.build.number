@@ -1,0 +1,11 @@
+#Ant properties
+#Mon Nov 20 20:35:54 UTC 2017
+builddate=20171120 2035
+description=pcmbackofficesamplesaddon
+group.id=de.hybris.platform
+module.name=platform-module
+name=pcmbackofficesamplesaddon
+releasedate=20171115 1907
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0

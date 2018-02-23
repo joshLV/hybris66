@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Nov 15 01:26:45 UTC 2017
+builddate=20171115 0126
+description=saporderexchangeb2b
+group.id=de.hybris.platform
+module.name=platform-module
+name=saporderexchangeb2b
+releasedate=20171110 1320
+vendor=hybris
+version=6.6.0.0
+version.api=6.6.0
